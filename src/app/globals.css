@@ -690,12 +690,12 @@ button {
 .clients-section {
   position: relative;
   overflow: hidden;
-  padding: 52px 0 58px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  padding: 60px 0 68px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(5, 196, 255, 0.075), transparent 48%),
-    #101010;
+    radial-gradient(ellipse at 50% 0%, rgba(5, 196, 255, 0.06), transparent 55%),
+    #0d0e12;
 }
 
 .clients-heading {
@@ -750,28 +750,28 @@ button {
 
 .client-marquees {
   display: grid;
-  gap: 16px;
-  margin-top: 36px;
+  gap: 18px;
+  margin-top: 40px;
 }
 
 .client-marquee-row {
   overflow: hidden;
   width: 100%;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
 
 .client-track {
   display: flex;
   width: max-content;
-  gap: 16px;
-  animation: clients-scroll 52s linear infinite;
+  gap: 18px;
+  animation: clients-scroll 55s linear infinite;
   will-change: transform;
 }
 
 .client-marquee-row-reverse .client-track {
   animation-name: clients-scroll-reverse;
-  animation-duration: 58s;
+  animation-duration: 60s;
 }
 
 .client-marquee-row:hover .client-track {
@@ -784,28 +784,30 @@ button {
 
 .client-logo-card {
   display: flex;
-  width: 152px;
-  height: 152px;
-  flex: 0 0 152px;
+  width: 130px;
+  height: 130px;
+  flex: 0 0 130px;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  border-radius: 14px;
-  background: linear-gradient(145deg, #f3f7fb, #e4ebf3);
-  color: #252525;
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: #15161b;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   text-decoration: none;
   transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
 }
 
 .client-logo-card:hover {
-  transform: translateY(-5px);
-  border-color: #05c4ff;
-  box-shadow: 0 14px 34px rgba(5, 196, 255, 0.18), 0 8px 26px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(5, 196, 255, 0.55);
+  background: #1a1c22;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(5, 196, 255, 0.18);
 }
 
 .client-logo-card:focus-visible {
@@ -815,39 +817,49 @@ button {
 
 .client-logo {
   position: relative;
-  display: grid;
+  display: flex;
   width: 100%;
   height: 100%;
-  place-items: center;
-  padding: 5px;
-  border: 1px solid rgba(22, 38, 58, 0.08);
-  border-radius: 9px;
-  background: #fff;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: background 200ms ease, box-shadow 200ms ease;
 }
 
-.client-logo-surface-ice {
-  background: #eaf3f8;
+/* Contrast inner backgrounds fitted behind each logo to make them pop */
+.client-logo-surface-white {
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.client-logo-surface-dark {
+  background: #0d0f14;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .client-logo-surface-navy {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: #17283d;
+  background: #0f1c2e;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
-.client-logo-surface-sage {
-  background: #eef4ea;
-}
-
-.client-logo-surface-sand {
-  background: #f3efe6;
+.client-logo-surface-cream {
+  background: #fbf9f4;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
 .client-logo-image {
   position: relative;
   z-index: 1;
   display: block;
-  padding: 10px;
+  padding: 8px;
   object-fit: contain;
+  transition: transform 200ms ease;
+}
+
+.client-logo-card:hover .client-logo-image {
+  transform: scale(1.05);
 }
 
 .client-logo-fallback {
@@ -855,9 +867,18 @@ button {
   width: 100%;
   height: 100%;
   place-items: center;
-  color: #292929;
-  font-size: 24px;
+  color: #111827;
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: center;
+  padding: 4px;
+  line-height: 1.25;
+}
+
+.client-logo-surface-dark .client-logo-fallback,
+.client-logo-surface-navy .client-logo-fallback {
+  color: #f3f4f6;
 }
 
 .client-logo-has-image .client-logo-fallback {
@@ -1470,10 +1491,11 @@ button {
   }
 
   .client-logo-card {
-    width: 128px;
-    height: 128px;
-    flex-basis: 128px;
-    padding: 6px;
+    width: 104px;
+    height: 104px;
+    flex-basis: 104px;
+    padding: 12px;
+    border-radius: 16px;
   }
 
   .hero-topbar {

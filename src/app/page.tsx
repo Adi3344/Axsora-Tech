@@ -17,38 +17,38 @@ type Client = {
   name: string;
   href: string;
   logo: string | null;
-  logoBackground?: 'ice' | 'navy' | 'sage' | 'sand';
+  logoBackground?: 'white' | 'dark' | 'cream' | 'navy';
 };
 
 const clients: Client[] = [
-  { name: 'I Go Above', href: 'https://igoabove.com/', logo: '/client-logos/igoabove-hires.png' },
-  { name: 'London Plant Maintenance', href: 'https://londonplantmaintenance.co.uk/', logo: '/client-logos/londonplantmaintenance.png', logoBackground: 'ice' },
+  { name: 'I Go Above', href: 'https://igoabove.com/', logo: '/client-logos/igoabove-hires.png', logoBackground: 'white' },
+  { name: 'London Plant Maintenance', href: 'https://londonplantmaintenance.co.uk/', logo: '/client-logos/londonplantmaintenance.png', logoBackground: 'white' },
   { name: 'Edge Pro Roofing', href: 'https://edgeproroofing.com/', logo: '/client-logos/edgepro-roofing.png', logoBackground: 'navy' },
-  { name: 'A2Z Finance Protection', href: 'https://a2zfinanceprotection.co.uk/', logo: '/client-logos/a2z-finance-protection-hires.png', logoBackground: 'ice' },
-  { name: 'UC Homes', href: 'https://uc-homes.co.uk/', logo: '/client-logos/uc-homes.png' },
+  { name: 'A2Z Finance Protection', href: 'https://a2zfinanceprotection.co.uk/', logo: '/client-logos/a2z-finance-protection-hires.png', logoBackground: 'white' },
+  { name: 'UC Homes', href: 'https://uc-homes.co.uk/', logo: '/client-logos/uc-homes.png', logoBackground: 'white' },
   { name: 'CS750', href: 'https://cs750.com/', logo: null },
-  { name: 'De Kinderen Auto', href: 'https://dekinderenauto.nl/', logo: '/client-logos/dekinderen-auto.png' },
-  { name: 'Elegant Scalp Lux Spa', href: 'https://elegantscalpluxspa.com/', logo: '/client-logos/elegant-scalp-lux-spa.png' },
-  { name: 'Wiktoria Nutrition', href: 'https://wiktorianutrition.co.uk/', logo: '/client-logos/wiktoria-nutrition-hires.png', logoBackground: 'sage' },
-  { name: 'Noma Counseling', href: 'https://nomacounseling.com/', logo: '/client-logos/noma-counseling-hires.png', logoBackground: 'ice' },
-  { name: 'Renu Wound Care', href: 'https://renuwoundcare.com/', logo: '/client-logos/renu-wound-care.png' },
-  { name: 'Avera Travel', href: 'https://averatravel.com/', logo: '/client-logos/avera-travel.png' },
+  { name: 'De Kinderen Auto', href: 'https://dekinderenauto.nl/', logo: '/client-logos/dekinderen-auto-hires.png', logoBackground: 'white' },
+  { name: 'Elegant Scalp Lux Spa', href: 'https://elegantscalpluxspa.com/', logo: '/client-logos/elegant-scalp-lux-spa.png', logoBackground: 'white' },
+  { name: 'Wiktoria Nutrition', href: 'https://wiktorianutrition.co.uk/', logo: '/client-logos/wiktoria-nutrition-hires.png', logoBackground: 'white' },
+  { name: 'Noma Counseling', href: 'https://nomacounseling.com/', logo: '/client-logos/noma-counseling-hires.png', logoBackground: 'white' },
+  { name: 'Renu Wound Care', href: 'https://renuwoundcare.com/', logo: '/client-logos/renu-wound-care-hires.png', logoBackground: 'navy' },
+  { name: 'Avera Travel', href: 'https://averatravel.com/', logo: '/client-logos/avera-travel.png', logoBackground: 'white' },
   { name: 'Verdikt Studios', href: 'https://verdiktstudios.com/', logo: null },
-  { name: 'Bani Jewellers', href: 'https://banijewellers.com/', logo: '/client-logos/bani-jewellers.png' },
-  { name: 'Truston Finance', href: 'https://trustonfinance.nl/', logo: '/client-logos/truston-finance.png' },
-  { name: 'Cogen THC', href: 'https://cogenthc.com/', logo: '/client-logos/cogen-thc.png' },
-  { name: 'Stella Legal Solutions', href: 'https://stellalegalsolutions.com/', logo: '/client-logos/stella-legal-solutions.png' },
-  { name: 'Capraxis', href: 'http://capraxis.com/', logo: '/client-logos/capraxis.png' },
-  { name: 'Warm Walks Inc.', href: 'https://www.warmwalksinc.com/', logo: '/client-logos/warm-walks-hires.webp', logoBackground: 'sand' },
-  { name: 'Todle Legal', href: 'https://todlelegal.com/', logo: '/client-logos/todle-legal.png' },
-  { name: 'RS Motors', href: 'https://rs-motors.fr/', logo: '/client-logos/rs-motors.png', logoBackground: 'sand' },
-  { name: 'RCF Inc.', href: 'https://rcfinc.org/', logo: '/client-logos/rcf-inc-hires.jpg' },
-  { name: 'Spoken Free', href: 'https://spokenfree.com/', logo: '/client-logos/spoken-free-hires.png' },
-  { name: 'Sacred Qalam', href: 'https://sacredqalam.com/', logo: '/client-logos/sacred-qalam.png' },
-  { name: 'Aeterna Gin', href: 'https://aeternagin.it/', logo: '/client-logos/aeterna-gin.png' },
-  { name: 'Ready2Sell Homes', href: 'https://ready2sell.homes/', logo: '/client-logos/ready2sell-homes.png' },
-  { name: 'Amark Logistics', href: 'https://amarklogistics.com/', logo: '/client-logos/amark-logistics-hires.webp' },
-  { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png' },
+  { name: 'Bani Jewellers', href: 'https://banijewellers.com/', logo: '/client-logos/bani-jewellers.png', logoBackground: 'white' },
+  { name: 'Truston Finance', href: 'https://trustonfinance.nl/', logo: '/client-logos/truston-finance-hires.png', logoBackground: 'navy' },
+  { name: 'Cogen THC', href: 'https://cogenthc.com/', logo: '/client-logos/cogen-thc.png', logoBackground: 'white' },
+  { name: 'Stella Legal Solutions', href: 'https://stellalegalsolutions.com/', logo: '/client-logos/stella-legal-solutions.png', logoBackground: 'white' },
+  { name: 'Capraxis', href: 'http://capraxis.com/', logo: '/client-logos/capraxis-wordmark.png', logoBackground: 'white' },
+  { name: 'Warm Walks Inc.', href: 'https://www.warmwalksinc.com/', logo: '/client-logos/warm-walks-hires.webp', logoBackground: 'white' },
+  { name: 'Todle Legal', href: 'https://todlelegal.com/', logo: '/client-logos/todle-legal.png', logoBackground: 'white' },
+  { name: 'RS Motors', href: 'https://rs-motors.fr/', logo: '/client-logos/rs-motors.png', logoBackground: 'white' },
+  { name: 'RCF Inc.', href: 'https://rcfinc.org/', logo: '/client-logos/rcf-inc-hires.jpg', logoBackground: 'white' },
+  { name: 'Spoken Free', href: 'https://spokenfree.com/', logo: '/client-logos/spoken-free-hires.png', logoBackground: 'white' },
+  { name: 'Sacred Qalam', href: 'https://sacredqalam.com/', logo: '/client-logos/sacred-qalam.png', logoBackground: 'white' },
+  { name: 'Aeterna Gin', href: 'https://aeternagin.it/', logo: '/client-logos/aeterna-gin.png', logoBackground: 'dark' },
+  { name: 'Ready2Sell Homes', href: 'https://ready2sell.homes/', logo: '/client-logos/ready2sell-homes.png', logoBackground: 'white' },
+  { name: 'Amark Logistics', href: 'https://amarklogistics.com/', logo: '/client-logos/amark-logistics-hires.webp', logoBackground: 'white' },
+  { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png', logoBackground: 'white' },
 ];
 
 const featuredClientNames = new Set([
@@ -56,8 +56,12 @@ const featuredClientNames = new Set([
   'London Plant Maintenance',
   'Edge Pro Roofing',
   'A2Z Finance Protection',
+  'De Kinderen Auto',
   'Wiktoria Nutrition',
   'Noma Counseling',
+  'Renu Wound Care',
+  'Truston Finance',
+  'Capraxis',
   'Warm Walks Inc.',
   'RS Motors',
   'RCF Inc.',
@@ -164,19 +168,21 @@ function ClientLogoCard({
       tabIndex={duplicate ? -1 : undefined}
     >
       <span
-        className={`client-logo${client.logo ? ' client-logo-has-image' : ''}${client.logoBackground ? ` client-logo-surface-${client.logoBackground}` : ''}`}
+        className={`client-logo${client.logo ? ' client-logo-has-image' : ''}${
+          client.logoBackground ? ` client-logo-surface-${client.logoBackground}` : ' client-logo-surface-white'
+        }`}
       >
         {client.logo ? (
           <>
             <span className="client-logo-fallback" aria-hidden="true">
-              {client.name.slice(0, 1)}
+              {client.name}
             </span>
             <Image
               className="client-logo-image"
               fill
               src={client.logo}
-              sizes="(max-width: 720px) 90px, 108px"
-              alt=""
+              sizes="(max-width: 720px) 104px, 130px"
+              alt={client.name}
               onError={(event) => {
                 event.currentTarget.parentElement?.classList.add('client-logo-failed');
               }}
@@ -184,7 +190,7 @@ function ClientLogoCard({
           </>
         ) : (
           <span className="client-logo-fallback" aria-hidden="true">
-            {client.name.slice(0, 1)}
+            {client.name}
           </span>
         )}
       </span>
@@ -435,7 +441,7 @@ export default function Home() {
           </p>
         </div>
         <div className="client-marquees" aria-label="Client website logos">
-          {[featuredClients.slice(0, 6), featuredClients.slice(6)].map((row, rowIndex) => (
+          {[featuredClients.slice(0, 8), featuredClients.slice(8)].map((row, rowIndex) => (
             <div
               className={`client-marquee-row${rowIndex === 1 ? ' client-marquee-row-reverse' : ''}`}
               key={rowIndex}
