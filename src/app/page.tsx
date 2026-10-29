@@ -13,17 +13,24 @@ const navigation = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const clients = [
-  { name: 'I Go Above', href: 'https://igoabove.com/', logo: '/client-logos/igoabove.png' },
-  { name: 'London Plant Maintenance', href: 'https://londonplantmaintenance.co.uk/', logo: '/client-logos/londonplantmaintenance.png' },
-  { name: 'Edge Pro Roofing', href: 'https://edgeproroofing.com/', logo: '/client-logos/edgepro-roofing.png' },
-  { name: 'A2Z Finance Protection', href: 'https://a2zfinanceprotection.co.uk/', logo: '/client-logos/a2z-finance-protection.png' },
+type Client = {
+  name: string;
+  href: string;
+  logo: string | null;
+  logoBackground?: 'ice' | 'navy' | 'sage' | 'sand';
+};
+
+const clients: Client[] = [
+  { name: 'I Go Above', href: 'https://igoabove.com/', logo: '/client-logos/igoabove-hires.png' },
+  { name: 'London Plant Maintenance', href: 'https://londonplantmaintenance.co.uk/', logo: '/client-logos/londonplantmaintenance.png', logoBackground: 'ice' },
+  { name: 'Edge Pro Roofing', href: 'https://edgeproroofing.com/', logo: '/client-logos/edgepro-roofing.png', logoBackground: 'navy' },
+  { name: 'A2Z Finance Protection', href: 'https://a2zfinanceprotection.co.uk/', logo: '/client-logos/a2z-finance-protection-hires.png', logoBackground: 'ice' },
   { name: 'UC Homes', href: 'https://uc-homes.co.uk/', logo: '/client-logos/uc-homes.png' },
   { name: 'CS750', href: 'https://cs750.com/', logo: null },
   { name: 'De Kinderen Auto', href: 'https://dekinderenauto.nl/', logo: '/client-logos/dekinderen-auto.png' },
   { name: 'Elegant Scalp Lux Spa', href: 'https://elegantscalpluxspa.com/', logo: '/client-logos/elegant-scalp-lux-spa.png' },
-  { name: 'Wiktoria Nutrition', href: 'https://wiktorianutrition.co.uk/', logo: '/client-logos/wiktoria-nutrition.png' },
-  { name: 'Noma Counseling', href: 'https://nomacounseling.com/', logo: '/client-logos/noma-counseling.png' },
+  { name: 'Wiktoria Nutrition', href: 'https://wiktorianutrition.co.uk/', logo: '/client-logos/wiktoria-nutrition-hires.png', logoBackground: 'sage' },
+  { name: 'Noma Counseling', href: 'https://nomacounseling.com/', logo: '/client-logos/noma-counseling-hires.png', logoBackground: 'ice' },
   { name: 'Renu Wound Care', href: 'https://renuwoundcare.com/', logo: '/client-logos/renu-wound-care.png' },
   { name: 'Avera Travel', href: 'https://averatravel.com/', logo: '/client-logos/avera-travel.png' },
   { name: 'Verdikt Studios', href: 'https://verdiktstudios.com/', logo: null },
@@ -32,17 +39,35 @@ const clients = [
   { name: 'Cogen THC', href: 'https://cogenthc.com/', logo: '/client-logos/cogen-thc.png' },
   { name: 'Stella Legal Solutions', href: 'https://stellalegalsolutions.com/', logo: '/client-logos/stella-legal-solutions.png' },
   { name: 'Capraxis', href: 'http://capraxis.com/', logo: '/client-logos/capraxis.png' },
-  { name: 'Warm Walks Inc.', href: 'https://www.warmwalksinc.com/', logo: '/client-logos/warm-walks.png' },
+  { name: 'Warm Walks Inc.', href: 'https://www.warmwalksinc.com/', logo: '/client-logos/warm-walks-hires.webp', logoBackground: 'sand' },
   { name: 'Todle Legal', href: 'https://todlelegal.com/', logo: '/client-logos/todle-legal.png' },
-  { name: 'RS Motors', href: 'https://rs-motors.fr/', logo: '/client-logos/rs-motors.png' },
-  { name: 'RCF Inc.', href: 'https://rcfinc.org/', logo: '/client-logos/rcf-inc.png' },
-  { name: 'Spoken Free', href: 'https://spokenfree.com/', logo: '/client-logos/spoken-free.png' },
+  { name: 'RS Motors', href: 'https://rs-motors.fr/', logo: '/client-logos/rs-motors.png', logoBackground: 'sand' },
+  { name: 'RCF Inc.', href: 'https://rcfinc.org/', logo: '/client-logos/rcf-inc-hires.jpg' },
+  { name: 'Spoken Free', href: 'https://spokenfree.com/', logo: '/client-logos/spoken-free-hires.png' },
   { name: 'Sacred Qalam', href: 'https://sacredqalam.com/', logo: '/client-logos/sacred-qalam.png' },
   { name: 'Aeterna Gin', href: 'https://aeternagin.it/', logo: '/client-logos/aeterna-gin.png' },
   { name: 'Ready2Sell Homes', href: 'https://ready2sell.homes/', logo: '/client-logos/ready2sell-homes.png' },
-  { name: 'Amark Logistics', href: 'https://amarklogistics.com/', logo: '/client-logos/amark-logistics.png' },
+  { name: 'Amark Logistics', href: 'https://amarklogistics.com/', logo: '/client-logos/amark-logistics-hires.webp' },
   { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png' },
 ];
+
+const featuredClientNames = new Set([
+  'I Go Above',
+  'London Plant Maintenance',
+  'Edge Pro Roofing',
+  'A2Z Finance Protection',
+  'Wiktoria Nutrition',
+  'Noma Counseling',
+  'Warm Walks Inc.',
+  'RS Motors',
+  'RCF Inc.',
+  'Spoken Free',
+  'Sacred Qalam',
+  'Amark Logistics',
+]);
+const featuredClients = clients.filter(
+  (client) => client.logo && featuredClientNames.has(client.name),
+);
 
 const heroPhrases = [
   { before: '', accent: 'Websites that sell', after: '.' },
@@ -138,7 +163,9 @@ function ClientLogoCard({
       aria-hidden={duplicate || undefined}
       tabIndex={duplicate ? -1 : undefined}
     >
-      <span className={`client-logo${client.logo ? ' client-logo-has-image' : ''}`}>
+      <span
+        className={`client-logo${client.logo ? ' client-logo-has-image' : ''}${client.logoBackground ? ` client-logo-surface-${client.logoBackground}` : ''}`}
+      >
         {client.logo ? (
           <>
             <span className="client-logo-fallback" aria-hidden="true">
@@ -146,9 +173,9 @@ function ClientLogoCard({
             </span>
             <Image
               className="client-logo-image"
+              fill
               src={client.logo}
-              width={128}
-              height={128}
+              sizes="(max-width: 720px) 90px, 108px"
               alt=""
               onError={(event) => {
                 event.currentTarget.parentElement?.classList.add('client-logo-failed');
@@ -401,11 +428,14 @@ export default function Home() {
 
       <section className="clients-section" id="clients" aria-labelledby="clients-title">
         <div className="clients-heading">
-          <p className="clients-kicker">Our clients</p>
+          <p className="clients-kicker">Trusted by ambitious teams</p>
           <h2 id="clients-title">Companies That Trust Us</h2>
+          <p className="clients-subtitle">
+            A few of the businesses we&apos;re proud to work alongside.
+          </p>
         </div>
         <div className="client-marquees" aria-label="Client website logos">
-          {[clients.slice(0, 14), clients.slice(14)].map((row, rowIndex) => (
+          {[featuredClients.slice(0, 6), featuredClients.slice(6)].map((row, rowIndex) => (
             <div
               className={`client-marquee-row${rowIndex === 1 ? ' client-marquee-row-reverse' : ''}`}
               key={rowIndex}

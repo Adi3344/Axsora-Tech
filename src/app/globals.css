@@ -11,8 +11,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-montserrat);
-  --font-mono: var(--font-montserrat);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 * {
@@ -35,7 +35,7 @@ body {
 body,
 button,
 a {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -688,15 +688,18 @@ button {
 }
 
 .clients-section {
+  position: relative;
   overflow: hidden;
-  padding: 36px 0 46px;
+  padding: 52px 0 58px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: #101010;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(5, 196, 255, 0.075), transparent 48%),
+    #101010;
 }
 
 .clients-heading {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 0 24px;
   text-align: center;
@@ -704,86 +707,110 @@ button {
 
 .clients-kicker {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin: 0 0 10px;
-  color: #ff777d;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.025em;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  color: #72dcff;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .clients-kicker::after {
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
+  width: 22px;
+  height: 1px;
+  background: #05c4ff;
+  content: "";
+}
+
+.clients-kicker::before {
+  width: 22px;
+  height: 1px;
+  background: #05c4ff;
   content: "";
 }
 
 .clients-heading h2 {
   margin: 0;
   color: #f7f7f8;
-  font-size: clamp(25px, 2.6vw, 32px);
+  font-size: clamp(27px, 3vw, 36px);
   font-weight: 700;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.045em;
   line-height: 1.2;
+}
+
+.clients-subtitle {
+  margin: 10px 0 0;
+  color: #999ca5;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .client-marquees {
   display: grid;
-  gap: 14px;
-  margin-top: 42px;
+  gap: 16px;
+  margin-top: 36px;
 }
 
 .client-marquee-row {
   overflow: hidden;
   width: 100%;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
 }
 
 .client-track {
   display: flex;
   width: max-content;
-  gap: 18px;
-  animation: clients-scroll 46s linear infinite;
+  gap: 16px;
+  animation: clients-scroll 52s linear infinite;
   will-change: transform;
 }
 
 .client-marquee-row-reverse .client-track {
   animation-name: clients-scroll-reverse;
-  animation-duration: 53s;
+  animation-duration: 58s;
 }
 
 .client-marquee-row:hover .client-track {
   animation-play-state: paused;
 }
 
+.client-marquee-row:focus-within .client-track {
+  animation-play-state: paused;
+}
+
 .client-logo-card {
   display: flex;
-  width: 132px;
-  height: 132px;
-  flex: 0 0 132px;
+  width: 152px;
+  height: 152px;
+  flex: 0 0 152px;
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  border: 1px solid #dedede;
-  border-radius: 10px;
-  background: #fff;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f3f7fb, #e4ebf3);
   color: #252525;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
   text-decoration: none;
   transition:
     border-color 180ms ease,
-    background-color 180ms ease,
+    box-shadow 180ms ease,
     transform 180ms ease;
 }
 
 .client-logo-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(240, 68, 79, 0.8);
-  background: #fff;
+  transform: translateY(-5px);
+  border-color: #05c4ff;
+  box-shadow: 0 14px 34px rgba(5, 196, 255, 0.18), 0 8px 26px rgba(0, 0, 0, 0.2);
+}
+
+.client-logo-card:focus-visible {
+  outline: 2px solid #05c4ff;
+  outline-offset: 4px;
 }
 
 .client-logo {
@@ -792,18 +819,34 @@ button {
   width: 100%;
   height: 100%;
   place-items: center;
-  overflow: hidden;
-  padding: 2px;
-  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid rgba(22, 38, 58, 0.08);
+  border-radius: 9px;
   background: #fff;
+}
+
+.client-logo-surface-ice {
+  background: #eaf3f8;
+}
+
+.client-logo-surface-navy {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #17283d;
+}
+
+.client-logo-surface-sage {
+  background: #eef4ea;
+}
+
+.client-logo-surface-sand {
+  background: #f3efe6;
 }
 
 .client-logo-image {
   position: relative;
   z-index: 1;
   display: block;
-  width: 100%;
-  height: 100%;
+  padding: 10px;
   object-fit: contain;
 }
 
@@ -1399,32 +1442,38 @@ button {
 
 @media (max-width: 720px) {
   .clients-section {
-    padding: 36px 0 44px;
+    padding: 42px 0 46px;
   }
 
   .clients-heading h2 {
-    font-size: clamp(25px, 6.7vw, 31px);
+    font-size: clamp(25px, 7vw, 32px);
+  }
+
+  .clients-subtitle {
+    max-width: 300px;
+    margin: 9px auto 0;
+    font-size: 12px;
   }
 
   .client-marquees {
-    gap: 14px;
-    margin-top: 36px;
+    gap: 13px;
+    margin-top: 30px;
   }
 
   .client-track {
-    gap: 14px;
-    animation-duration: 39s;
+    gap: 13px;
+    animation-duration: 46s;
   }
 
   .client-marquee-row-reverse .client-track {
-    animation-duration: 45s;
+    animation-duration: 50s;
   }
 
   .client-logo-card {
-    width: 112px;
-    height: 112px;
-    flex-basis: 112px;
-    padding: 9px;
+    width: 128px;
+    height: 128px;
+    flex-basis: 128px;
+    padding: 6px;
   }
 
   .hero-topbar {
