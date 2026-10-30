@@ -508,8 +508,8 @@ export default function Home() {
           <div className="about-left">
             {/* Experience Card */}
             <div className="about-experience-card">
-              <div className="about-experience-icon">📅</div>
-              <div className="about-experience-text">10+ Years Experience</div>
+              <div className="about-experience-icon">🏆</div>
+              <div className="about-experience-text">10+ Years Excellence</div>
             </div>
 
             {/* Gallery Images */}
@@ -517,7 +517,7 @@ export default function Home() {
               <figure className="about-gallery-image">
                 <Image
                   src="/about-team/team-collaboration.jpg"
-                  alt="Team collaborating on digital solutions"
+                  alt="Global team collaboration"
                   fill
                   sizes="(max-width: 720px) 100vw, 28vw"
                 />
@@ -525,7 +525,7 @@ export default function Home() {
               <figure className="about-gallery-image">
                 <Image
                   src="/about-team/team-planning.jpg"
-                  alt="Developer working on code"
+                  alt="Strategic digital transformation planning"
                   fill
                   sizes="(max-width: 720px) 100vw, 28vw"
                 />
@@ -536,7 +536,7 @@ export default function Home() {
             <div className="about-contact-card">
               <div className="about-contact-icon">📞</div>
               <div className="about-contact-text">
-                <div className="about-contact-label">Contact Us</div>
+                <div className="about-contact-label">Get Started</div>
                 <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
               </div>
             </div>
@@ -547,7 +547,7 @@ export default function Home() {
             <figure className="about-gallery-center">
               <Image
                 src="/about-team/team-workshop.jpg"
-                alt="Developer working on code and design"
+                alt="Digital innovation and software development"
                 fill
                 sizes="(max-width: 720px) 100vw, 22vw"
               />
@@ -557,27 +557,31 @@ export default function Home() {
           {/* Right Column - Content */}
           <div className="about-right">
             <h2 id="about-title">
-              <span className="about-title-main">Professional Website</span>
-              <span className="about-title-highlight">Development Company in Lahore</span>
+              <span className="about-title-main">Digital Excellence Through</span>
+              <span className="about-title-highlight">Innovation & Technology</span>
             </h2>
 
             <p className="about-description">
-              <strong>Axsora Tech</strong> is a trusted website development company in Lahore with over 10 years of experience. We specialize in building professional websites, high-converting online stores, and result-driven digital marketing campaigns for businesses across Pakistan, USA, UK, Europe, UAE, and worldwide. From website development and ecommerce website development Lahore to digital marketing, domain registration, and web hosting we deliver complete digital solutions under one roof. We are a SECP-registered private limited company (Registration No. 0282206) and a PSEB-registered IT firm (Registration No. Z-25-13574/25), committed to delivering quality, transparency, and long-term growth for our clients.
+              <strong>Axsora Tech</strong> is a premier digital transformation company specializing in end-to-end web development, mobile applications, digital marketing, and enterprise software solutions. With over a decade of proven expertise, we empower businesses across Pakistan, North America, Europe, Middle East, and Asia-Pacific regions to achieve digital excellence through cutting-edge technology and strategic innovation.
+            </p>
+
+            <p className="about-description">
+              Our multidisciplinary team of expert developers, UX/UI designers, and digital strategists delivers comprehensive digital solutions that drive measurable business growth. We combine technical excellence with strategic thinking to create scalable, secure, and future-ready digital ecosystems for enterprises of all sizes.
             </p>
 
             {/* Stats */}
             <div className="about-stats">
               <div className="about-stat-item about-stat-primary">
-                <div className="about-stat-number">2,500 <span>+</span></div>
-                <div className="about-stat-label">Projects Done</div>
+                <div className="about-stat-number">500+ <span>+</span></div>
+                <div className="about-stat-label">Projects Delivered</div>
               </div>
               <div className="about-stat-item">
-                <div className="about-stat-number">15 <span>+</span></div>
-                <div className="about-stat-label">Best Team</div>
+                <div className="about-stat-number">50+ <span>+</span></div>
+                <div className="about-stat-label">Expert Professionals</div>
               </div>
               <div className="about-stat-item">
-                <div className="about-stat-number">10 <span>+</span></div>
-                <div className="about-stat-label">Certifications</div>
+                <div className="about-stat-number">30+ <span>+</span></div>
+                <div className="about-stat-label">Countries Served</div>
               </div>
             </div>
           </div>
