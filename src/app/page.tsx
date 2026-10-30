@@ -504,100 +504,81 @@ export default function Home() {
         ref={aboutRef}
       >
         <div className="about-container">
-          {/* Left Column - Content & Stats */}
+          {/* Left Column - Cards */}
           <div className="about-left">
-            <div className="about-content-wrapper">
-              <h2 id="about-title">
-                <span className="about-title-main">Leading Digital Solutions</span>
-                <span className="about-title-highlight">Multi-Service Tech Company</span>
-              </h2>
-              
-              <p className="about-description">
-                <strong>Axsora Tech</strong> is a full-service digital technology company specializing in comprehensive solutions across content management, growth marketing, web design & development, AI automation, and mobile app development. With over 10 years of industry expertise, we partner with businesses worldwide to transform their digital presence and drive measurable growth.
-              </p>
-
-              <div className="about-services-list">
-                <div className="about-service-item">
-                  <span className="about-service-icon">📱</span>
-                  <span>Mobile App Development</span>
-                </div>
-                <div className="about-service-item">
-                  <span className="about-service-icon">🎨</span>
-                  <span>Web Design & Development</span>
-                </div>
-                <div className="about-service-item">
-                  <span className="about-service-icon">📊</span>
-                  <span>Growth Marketing & SEO</span>
-                </div>
-                <div className="about-service-item">
-                  <span className="about-service-icon">🤖</span>
-                  <span>AI Automation Solutions</span>
-                </div>
-                <div className="about-service-item">
-                  <span className="about-service-icon">📝</span>
-                  <span>Content Management</span>
-                </div>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="about-stats-grid">
-                <div className="about-stat about-stat-primary">
-                  <div className="about-stat-number">10+</div>
-                  <div className="about-stat-label">Years Experience</div>
-                </div>
-                <div className="about-stat">
-                  <div className="about-stat-number">500+</div>
-                  <div className="about-stat-label">Projects Completed</div>
-                </div>
-                <div className="about-stat">
-                  <div className="about-stat-number">50+</div>
-                  <div className="about-stat-label">Team Members</div>
-                </div>
-              </div>
+            {/* Experience Card */}
+            <div className="about-experience-card">
+              <div className="about-experience-icon">📅</div>
+              <div className="about-experience-text">10+ Years Experience</div>
             </div>
-          </div>
 
-          {/* Right Column - Gallery */}
-          <div className="about-right">
-            <div className="about-gallery-grid">
-              <figure className="about-gallery-item about-gallery-item-large">
+            {/* Gallery Images */}
+            <div className="about-gallery-stack">
+              <figure className="about-gallery-image">
                 <Image
                   src="/about-team/team-collaboration.jpg"
                   alt="Team collaborating on digital solutions"
                   fill
-                  sizes="(max-width: 720px) 100vw, 40vw"
+                  sizes="(max-width: 720px) 100vw, 28vw"
                 />
-                <div className="about-gallery-overlay">Web Design & Development</div>
               </figure>
-              <figure className="about-gallery-item">
+              <figure className="about-gallery-image">
                 <Image
                   src="/about-team/team-planning.jpg"
-                  alt="Strategic planning and growth marketing"
+                  alt="Developer working on code"
                   fill
-                  sizes="(max-width: 720px) 50vw, 20vw"
+                  sizes="(max-width: 720px) 100vw, 28vw"
                 />
-                <div className="about-gallery-overlay">Growth Marketing</div>
-              </figure>
-              <figure className="about-gallery-item">
-                <Image
-                  src="/about-team/team-workshop.jpg"
-                  alt="App development workshop"
-                  fill
-                  sizes="(max-width: 720px) 50vw, 20vw"
-                />
-                <div className="about-gallery-overlay">Mobile Apps</div>
               </figure>
             </div>
 
-            {/* Contact Info */}
-            <div className="about-contact-info">
-              <h3>Ready to start your project?</h3>
-              <a href="tel:+923005624325" className="about-contact-button">
-                <span>📞</span> +92 300-5624325
-              </a>
-              <a href="mailto:support@axsoratech.com" className="about-contact-button">
-                <span>✉️</span> support@axsoratech.com
-              </a>
+            {/* Contact Card */}
+            <div className="about-contact-card">
+              <div className="about-contact-icon">📞</div>
+              <div className="about-contact-text">
+                <div className="about-contact-label">Contact Us</div>
+                <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Middle Column - Image */}
+          <div className="about-middle">
+            <figure className="about-gallery-center">
+              <Image
+                src="/about-team/team-workshop.jpg"
+                alt="Developer working on code and design"
+                fill
+                sizes="(max-width: 720px) 100vw, 22vw"
+              />
+            </figure>
+          </div>
+
+          {/* Right Column - Content */}
+          <div className="about-right">
+            <h2 id="about-title">
+              <span className="about-title-main">Professional Website</span>
+              <span className="about-title-highlight">Development Company in Lahore</span>
+            </h2>
+
+            <p className="about-description">
+              <strong>Axsora Tech</strong> is a trusted website development company in Lahore with over 10 years of experience. We specialize in building professional websites, high-converting online stores, and result-driven digital marketing campaigns for businesses across Pakistan, USA, UK, Europe, UAE, and worldwide. From website development and ecommerce website development Lahore to digital marketing, domain registration, and web hosting we deliver complete digital solutions under one roof. We are a SECP-registered private limited company (Registration No. 0282206) and a PSEB-registered IT firm (Registration No. Z-25-13574/25), committed to delivering quality, transparency, and long-term growth for our clients.
+            </p>
+
+            {/* Stats */}
+            <div className="about-stats">
+              <div className="about-stat-item about-stat-primary">
+                <div className="about-stat-number">2,500 <span>+</span></div>
+                <div className="about-stat-label">Projects Done</div>
+              </div>
+              <div className="about-stat-item">
+                <div className="about-stat-number">15 <span>+</span></div>
+                <div className="about-stat-label">Best Team</div>
+              </div>
+              <div className="about-stat-item">
+                <div className="about-stat-number">10 <span>+</span></div>
+                <div className="about-stat-label">Certifications</div>
+              </div>
             </div>
           </div>
         </div>
