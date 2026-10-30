@@ -15,13 +15,22 @@ import {
   X,
 } from 'lucide-react';
 import Image from 'next/image';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import FeaturedSolutions from '@/components/FeaturedSolutions';
+import PortfolioShowcase from '@/components/PortfolioShowcase';
+import Testimonials from '@/components/Testimonials';
+import FaqSection from '@/components/FaqSection';
+import ContactSection from '@/components/ContactSection';
+import SiteFooter from '@/components/SiteFooter';
 
 const navigation = [
   { label: 'Home', href: '#home' },
   { label: 'Clients', href: '#clients' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Our process', href: '#process' },
+  { label: 'FAQs', href: '#faqs' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -317,6 +326,35 @@ function ServicePreview({ src }: { src: string }) {
   );
 }
 
+function HeroParticles() {
+  const particles = Array.from({ length: 28 }, (_, index) => ({
+    id: index,
+    left: `${(index * 37) % 100}%`,
+    top: `${(index * 61) % 100}%`,
+    size: `${2 + (index % 3)}px`,
+    delay: `${(index % 9) * -0.7}s`,
+    duration: `${5 + (index % 5)}s`,
+  }));
+
+  return (
+    <div className="hero-particles" aria-hidden="true">
+      {particles.map((particle) => (
+        <span
+          key={particle.id}
+          style={{
+            left: particle.left,
+            top: particle.top,
+            width: particle.size,
+            height: particle.size,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('light');
@@ -378,6 +416,7 @@ export default function Home() {
           preload="metadata"
           aria-hidden="true"
         />
+        <HeroParticles />
         <div className="hero-background-shade" aria-hidden="true" />
         <div className="hero-topbar">
           <a href="mailto:support@axsoratech.com">
@@ -566,6 +605,8 @@ export default function Home() {
           {services.map((service) => (
             <article className="service-card-genxe" key={service.number}>
               <div className="service-card-video-wrap">
+                <span className="service-card-number">{service.number}</span>
+                <span className="service-card-scanline" aria-hidden="true" />
                 <ServicePreview src={service.video} />
               </div>
               <div className="service-card-body">
@@ -575,6 +616,9 @@ export default function Home() {
                   ))}
                 </h3>
                 <p className="service-card-desc">{service.description}</p>
+                <div className="service-card-tags">
+                  {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
                 <a className="service-card-btn" href="#contact">
                   Learn More <ArrowRight size={16} aria-hidden="true" />
                 </a>
@@ -590,6 +634,12 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <WhyChooseUs />
+
+      <FeaturedSolutions />
+
+      <PortfolioShowcase />
 
       <section className="process-section section-shell" id="process">
         <div className="process-heading">
@@ -609,29 +659,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section section-shell" id="contact">
-        <div className="contact-glow" aria-hidden="true" />
-        <div className="section-kicker"><span>04</span> Have a good one in mind?</div>
-        <div className="contact-content">
-          <h2>Let&apos;s make<br /><span>it happen.</span></h2>
-          <div className="contact-action">
-            <p>Tell us where you want to go. We&apos;ll help you find the way.</p>
-            <a className="button button-primary" href="mailto:support@axsoratech.com">
-              Start a conversation <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
-      <footer className="site-footer">
-        <a className="brand footer-brand" href="#home">
-          <Image src="/logo.png" width={512} height={512} alt="" />
-          <span>axsora<span className="brand-tech">tech</span></span>
-        </a>
-        <p>More than an agency — your growth partner.</p>
-        <a className="footer-email" href="mailto:support@axsoratech.com">support@axsoratech.com</a>
-        <span className="copyright">© 2026 Axsora Tech. All rights reserved.</span>
-      </footer>
+      <FaqSection />
+
+      <ContactSection />
+
+      <SiteFooter />
     </main>
   );
 }

@@ -1,0 +1,10 @@
+'use client';
+
+import { ArrowUpRight, Check, Mail, MapPin } from 'lucide-react';
+import { FormEvent, useState } from 'react';
+
+export default function ContactSection() {
+  const [sent, setSent] = useState(false);
+  const submit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); };
+  return <section className="contact-form-section section-shell" id="contact"><div className="contact-form-intro"><div className="section-kicker"><span>09</span> Start a conversation</div><h2>Let&apos;s make<br /><span>it happen.</span></h2><p>Tell us what you are working toward. We will help you find the clearest path from idea to impact.</p><div className="contact-details"><a href="mailto:support@axsoratech.com"><Mail size={16} /> support@axsoratech.com</a><span><MapPin size={16} /> Serving ambitious teams worldwide</span></div></div><form className="contact-form" onSubmit={submit}><div className="contact-form-row"><label>Name<input required name="name" placeholder="Your name" /></label><label>Email<input required type="email" name="email" placeholder="you@company.com" /></label></div><label>What can we help with?<select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Web development</option><option>Mobile application</option><option>AI automation</option><option>Digital marketing</option><option>Something else</option></select></label><label>Tell us about your project<textarea required name="message" rows={5} placeholder="A few details about your goals, timeline, or challenge..." /></label><button className="contact-submit" type="submit">{sent ? <><Check size={17} /> Message ready to send</> : <>Send your enquiry <ArrowUpRight size={17} /></>}</button>{sent && <p className="contact-success">Thanks — we have your message. We&apos;ll be in touch shortly.</p>}</form></section>;
+}

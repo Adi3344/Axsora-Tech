@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -7,13 +7,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800'],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${inter.variable} h-full antialiased`}
+      className={`${montserrat.variable} h-full antialiased`}
       style={{ scrollBehavior: 'smooth' }}
     >
       <body className="min-h-full flex flex-col">{children}</body>
