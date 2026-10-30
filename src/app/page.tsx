@@ -504,87 +504,100 @@ export default function Home() {
         ref={aboutRef}
       >
         <div className="about-container">
-          {/* Left Column - Cards & Contact */}
+          {/* Left Column - Content & Stats */}
           <div className="about-left">
-            {/* Experience Card */}
-            <div className="about-feature-card about-experience-card">
-              <div className="about-card-icon">
-                📅
-              </div>
-              <div className="about-card-content">
-                <h3>10+ Years Experience</h3>
-              </div>
-            </div>
-
-            {/* Gallery Images */}
-            <div className="about-gallery-compact">
-              <figure className="about-gallery-card-compact">
-                <Image
-                  src="/about-team/team-collaboration.jpg"
-                  alt="Team members collaborating around a laptop"
-                  fill
-                  sizes="(max-width: 720px) 46vw, 25vw"
-                />
-              </figure>
-              <figure className="about-gallery-card-compact">
-                <Image
-                  src="/about-team/team-planning.jpg"
-                  alt="Colleagues sharing ideas during a project discussion"
-                  fill
-                  sizes="(max-width: 720px) 46vw, 25vw"
-                />
-              </figure>
-            </div>
-
-            {/* Contact Card */}
-            <div className="about-contact-card">
-              <div className="about-contact-icon">📞</div>
-              <div className="about-contact-content">
-                <p className="about-contact-label">Contact Us</p>
-                <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Middle Column - Code Image */}
-          <div className="about-middle">
-            <figure className="about-gallery-card-large">
-              <Image
-                src="/about-team/team-workshop.jpg"
-                alt="Developer working on code"
-                fill
-                sizes="(max-width: 720px) 90vw, 35vw"
-              />
-            </figure>
-          </div>
-
-          {/* Right Column - Content & Stats */}
-          <div className="about-right">
             <div className="about-content-wrapper">
               <h2 id="about-title">
-                <span className="about-title-main">Professional Website Development</span>
-                <span className="about-title-highlight">Company in Lahore</span>
+                <span className="about-title-main">Leading Digital Solutions</span>
+                <span className="about-title-highlight">Multi-Service Tech Company</span>
               </h2>
               
               <p className="about-description">
-                <strong>Axsora Tech</strong> is a trusted website development company in Lahore with over 10 years of experience. We specialize in building professional websites, high-converting online stores, and result-driven digital marketing campaigns for businesses across Pakistan, USA, UK, Europe, UAE, and worldwide. From website development and ecommerce website development Lahore to digital marketing, domain registration, and web hosting we deliver complete digital solutions under one roof. We are a SECP-registered private limited company (Registration No. 0282206) and a PSEB-registered IT firm (Registration No. Z-25-13574/25), committed to delivering quality, transparency, and long-term growth for our clients.
+                <strong>Axsora Tech</strong> is a full-service digital technology company specializing in comprehensive solutions across content management, growth marketing, web design & development, AI automation, and mobile app development. With over 10 years of industry expertise, we partner with businesses worldwide to transform their digital presence and drive measurable growth.
               </p>
+
+              <div className="about-services-list">
+                <div className="about-service-item">
+                  <span className="about-service-icon">📱</span>
+                  <span>Mobile App Development</span>
+                </div>
+                <div className="about-service-item">
+                  <span className="about-service-icon">🎨</span>
+                  <span>Web Design & Development</span>
+                </div>
+                <div className="about-service-item">
+                  <span className="about-service-icon">📊</span>
+                  <span>Growth Marketing & SEO</span>
+                </div>
+                <div className="about-service-item">
+                  <span className="about-service-icon">🤖</span>
+                  <span>AI Automation Solutions</span>
+                </div>
+                <div className="about-service-item">
+                  <span className="about-service-icon">📝</span>
+                  <span>Content Management</span>
+                </div>
+              </div>
 
               {/* Stats Grid */}
               <div className="about-stats-grid">
                 <div className="about-stat about-stat-primary">
-                  <div className="about-stat-number">2,500 <span>+</span></div>
-                  <div className="about-stat-label">Projects Done</div>
+                  <div className="about-stat-number">10+</div>
+                  <div className="about-stat-label">Years Experience</div>
                 </div>
                 <div className="about-stat">
-                  <div className="about-stat-number">15 <span>+</span></div>
-                  <div className="about-stat-label">Best Team</div>
+                  <div className="about-stat-number">500+</div>
+                  <div className="about-stat-label">Projects Completed</div>
                 </div>
                 <div className="about-stat">
-                  <div className="about-stat-number">10 <span>+</span></div>
-                  <div className="about-stat-label">Certifications</div>
+                  <div className="about-stat-number">50+</div>
+                  <div className="about-stat-label">Team Members</div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Right Column - Gallery */}
+          <div className="about-right">
+            <div className="about-gallery-grid">
+              <figure className="about-gallery-item about-gallery-item-large">
+                <Image
+                  src="/about-team/team-collaboration.jpg"
+                  alt="Team collaborating on digital solutions"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 40vw"
+                />
+                <div className="about-gallery-overlay">Web Design & Development</div>
+              </figure>
+              <figure className="about-gallery-item">
+                <Image
+                  src="/about-team/team-planning.jpg"
+                  alt="Strategic planning and growth marketing"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 20vw"
+                />
+                <div className="about-gallery-overlay">Growth Marketing</div>
+              </figure>
+              <figure className="about-gallery-item">
+                <Image
+                  src="/about-team/team-workshop.jpg"
+                  alt="App development workshop"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 20vw"
+                />
+                <div className="about-gallery-overlay">Mobile Apps</div>
+              </figure>
+            </div>
+
+            {/* Contact Info */}
+            <div className="about-contact-info">
+              <h3>Ready to start your project?</h3>
+              <a href="tel:+923005624325" className="about-contact-button">
+                <span>📞</span> +92 300-5624325
+              </a>
+              <a href="mailto:support@axsoratech.com" className="about-contact-button">
+                <span>✉️</span> support@axsoratech.com
+              </a>
             </div>
           </div>
         </div>
