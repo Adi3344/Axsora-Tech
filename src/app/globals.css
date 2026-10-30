@@ -19,8 +19,8 @@ html[data-theme='light'] {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-inter);
 }
 
 * {
@@ -36,14 +36,14 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 body,
 button,
 a {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -1196,8 +1196,222 @@ button {
 
 .services-section {
   padding-top: 100px;
-  padding-bottom: 125px;
+  padding-bottom: 100px;
+  background: var(--background);
+}
+
+/* ── GenXe-style Services Section ── */
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-kicker {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #f0444f;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}
+
+.services-kicker::before,
+.services-kicker::after {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: #f0444f;
+}
+
+.services-title {
+  margin: 0 0 16px;
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 620;
+  letter-spacing: -0.065em;
+  color: #f5f5f6;
+  line-height: 1.05;
+}
+
+.services-title-highlight {
+  display: inline-block;
+  position: relative;
+  background: #f0444f;
+  color: #ffffff;
+  padding: 2px 16px 7px;
+  border-radius: 3px;
+}
+
+.services-title-underline {
+  width: 56px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Grid: 3 columns */
+.services-grid-genxe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 70px 40px;
+  margin-bottom: 48px;
+  padding-top: 85px;
+}
+
+/* Card outer */
+.service-card-genxe {
+  position: relative;
+  border-radius: 8px;
   background: #0e0f13;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  padding-top: 100px;
+}
+
+.service-card-genxe:hover {
+  transform: translateY(-6px);
+  border-color: rgba(240, 68, 79, 0.42);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(240, 68, 79, 0.2);
+}
+
+/* Image wrapper — floats above the card */
+.service-card-video-wrap {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(ellipse at 70% 35%, rgba(240, 68, 79, 0.22), transparent 42%),
+    linear-gradient(135deg, #25262d, #121318);
+}
+
+.service-card-video-wrap video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: saturate(1.05) contrast(1.03);
+  transition: opacity 200ms ease, transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.service-card-genxe:hover .service-card-video-wrap video {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Card body */
+.service-card-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.service-card-title {
+  margin: 0 0 14px;
+  font-size: 21px;
+  font-weight: 580;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+  color: #f5f5f6;
+}
+
+.service-card-desc {
+  margin: 0 0 24px;
+  color: #9a9ba3;
+  font-size: 12.5px;
+  line-height: 1.65;
+  flex: 1;
+  min-height: auto;
+}
+
+/* Learn More pill button */
+.service-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 24px;
+  background: transparent;
+  color: #f5f5f6;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  border: 1px solid rgba(240, 68, 79, 0.65);
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.service-card-btn:hover {
+  background: #f0444f;
+  color: #ffffff;
+  border-color: #f0444f;
+  transform: translateY(-2px);
+}
+
+.service-card-btn svg {
+  transition: transform 180ms ease;
+}
+
+.service-card-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Footer row */
+.services-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.services-footer-text {
+  color: #9a9ba3;
+  font-size: 13px;
+}
+
+.services-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #f5f5f6;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.services-footer-link:hover {
+  color: #f0444f;
+}
+
+.services-footer-link svg {
+  transition: transform 180ms ease;
+}
+
+.services-footer-link:hover svg {
+  transform: translateX(3px);
 }
 
 .section-heading {
@@ -1473,6 +1687,11 @@ button {
 
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-grid-genxe {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 100px 40px;
   }
 
   .service-media {
@@ -1773,6 +1992,15 @@ button {
   .services-grid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .services-grid-genxe {
+    grid-template-columns: 1fr;
+    gap: 110px;
+  }
+
+  .service-card-video-wrap {
+    height: 200px;
   }
 
   .service-media {
@@ -2174,6 +2402,87 @@ html[data-theme='light'] .about-contact-link:hover {
 html[data-theme='light'] .services-section {
   background: #f4f6fa;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Light Theme - Services Section */
+html[data-theme='light'] .services-kicker {
+  color: #00b4f0;
+}
+
+html[data-theme='light'] .services-kicker::before,
+html[data-theme='light'] .services-kicker::after {
+  background: #00b4f0;
+}
+
+html[data-theme='light'] .services-title {
+  color: #0a0b0e;
+}
+
+html[data-theme='light'] .services-title-highlight {
+  background: #00b4f0;
+  color: #ffffff;
+}
+
+html[data-theme='light'] .services-title-underline {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme='light'] .service-card-genxe {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme='light'] .service-card-genxe:hover {
+  border-color: #00b4f0;
+  box-shadow: 0 20px 55px rgba(0, 180, 240, 0.15), 0 0 0 1px rgba(0, 195, 255, 0.3);
+}
+
+html[data-theme='light'] .service-card-video-wrap {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background:
+    radial-gradient(ellipse at 70% 35%, rgba(0, 195, 255, 0.18), transparent 42%),
+    linear-gradient(135deg, #e3e7f0, #cdd4e2);
+}
+
+html[data-theme='light'] .service-card-video-wrap video {
+  opacity: 0.85;
+}
+
+html[data-theme='light'] .service-card-genxe:hover .service-card-video-wrap video {
+  opacity: 1;
+  filter: saturate(1.12) contrast(1.05);
+}
+
+html[data-theme='light'] .service-card-title {
+  color: #0a0b0e;
+}
+
+html[data-theme='light'] .service-card-desc {
+  color: #555966;
+}
+
+html[data-theme='light'] .service-card-btn {
+  color: #0a0b0e;
+  border-color: rgba(0, 180, 240, 0.65);
+}
+
+html[data-theme='light'] .service-card-btn:hover {
+  background: #00b4f0;
+  color: #ffffff;
+  border-color: #00b4f0;
+}
+
+html[data-theme='light'] .services-footer-text {
+  color: #5e626e;
+}
+
+html[data-theme='light'] .services-footer-link {
+  color: #0a0b0e;
+}
+
+html[data-theme='light'] .services-footer-link:hover {
+  color: #00b4f0;
 }
 
 html[data-theme='light'] .section-kicker {

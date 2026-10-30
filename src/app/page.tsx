@@ -1,7 +1,19 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Bot,
+  Laptop,
+  Megaphone,
+  Menu,
+  Moon,
+  Share2,
+  Smartphone,
+  Sun,
+  X,
+} from 'lucide-react';
 import Image from 'next/image';
 
 const navigation = [
@@ -83,43 +95,48 @@ const heroPhrases = [
 const services = [
   {
     number: '01',
-    title: 'Social media\nmanagement',
+    title: 'Social Media\nManagement',
     description:
-      'Build a brand people remember. We plan, create, and manage content that grows your community.',
+      'Build a brand people remember. We plan, create, and manage content that grows your community and keeps your audience engaged.',
     tags: ['Content strategy', 'Community growth', 'Analytics'],
     video: '/WhatsApp Video 2026-10-29 at 12.59.32 AM (1).mp4',
+    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80',
   },
   {
     number: '02',
-    title: 'Growth\nmarketing',
+    title: 'Growth\nMarketing',
     description:
-      'Turn attention into action with focused campaigns built around your audience and your goals.',
+      'Turn attention into action with focused campaigns built around your audience and your goals for maximum ROI.',
     tags: ['SEO & GEO', 'Paid media', 'Conversion'],
     video: '/Growth-Marketing.mp4',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
   },
   {
     number: '03',
-    title: 'Web design &\ndevelopment',
+    title: 'Web Design &\nDevelopment',
     description:
-      'Make a lasting first impression with a fast, intuitive website designed to move your business forward.',
+      'Make a lasting first impression with a fast, intuitive website designed to move your business forward and convert visitors.',
     tags: ['Creative design', 'Full-stack dev', 'CMS'],
     video: '/Websites-2026-1.mp4',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
   },
   {
     number: '04',
-    title: 'AI\nautomations',
+    title: 'AI\nAutomations',
     description:
-      'Give your team more room to think. We connect tools and automate the work that slows you down.',
+      'Give your team more room to think. We connect tools and automate repetitive work that slows your business down.',
     tags: ['AI agents', 'Workflow design', 'Integrations'],
     video: '/WhatsApp Video 2026-10-29 at 12.59.31 AM.mp4',
+    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80',
   },
   {
     number: '05',
-    title: 'Mobile app\ndevelopment',
+    title: 'Mobile App\nDevelopment',
     description:
-      'From a first sketch to the app store, we create useful mobile experiences people love to use.',
+      'From a first sketch to the app store, we create useful mobile experiences people love to use every day.',
     tags: ['iOS & Android', 'UX/UI design', 'Scalable backend'],
     video: '/WhatsApp Video 2026-10-29 at 12.59.31 AM (1).mp4',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80',
   },
 ];
 
@@ -551,36 +568,40 @@ export default function Home() {
       </section>
 
       <section className="services-section section-shell" id="services">
-        <div className="section-heading">
-          <div>
-            <div className="section-kicker"><span>02</span> What we do</div>
-            <h2>One team.<br /><span>More possibilities.</span></h2>
-          </div>
-          <p>
-            The right mix of creative, digital, and technical expertise to take your business
-            where it needs to go.
-          </p>
+        <div className="services-header">
+          <div className="services-kicker">WHAT WE DO</div>
+          <h2 className="services-title">
+            Our <span className="services-title-highlight">Services</span>
+          </h2>
+          <div className="services-title-underline" />
         </div>
 
-        <div className="services-grid">
+        <div className="services-grid-genxe">
           {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <div className="service-media">
+            <article className="service-card-genxe" key={service.number}>
+              <div className="service-card-video-wrap">
                 <ServicePreview src={service.video} />
-                <span className="service-number">{service.number}</span>
-                <span className="service-arrow"><ArrowUpRight size={18} aria-hidden="true" /></span>
               </div>
-              <div className="service-info">
-                <h3>{service.title.split('\n').map((line, index) => (
-                  <span key={line}>{index > 0 && <br />}{line}</span>
-                ))}</h3>
-                <p>{service.description}</p>
-                <div className="service-tags">
-                  {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
+              <div className="service-card-body">
+                <h3 className="service-card-title">
+                  {service.title.split('\n').map((line, index) => (
+                    <span key={line}>{index > 0 && <br />}{line}</span>
+                  ))}
+                </h3>
+                <p className="service-card-desc">{service.description}</p>
+                <a className="service-card-btn" href="#contact">
+                  Learn More <ArrowRight size={16} aria-hidden="true" />
+                </a>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="services-footer">
+          <span className="services-footer-text">Lets Discover More</span>
+          <a className="services-footer-link" href="#contact">
+            See All Services <ArrowRight size={15} aria-hidden="true" />
+          </a>
         </div>
       </section>
 
