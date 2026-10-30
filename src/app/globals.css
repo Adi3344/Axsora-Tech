@@ -982,8 +982,42 @@ button {
   align-items: flex-start;
 }
 
-/* Left Column - Cards & Images */
+/* Left Column - AI Images */
 .about-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-gallery-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.about-gallery-image {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  aspect-ratio: 1.1;
+  border-radius: 16px;
+  background: #17191e;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-gallery-image img {
+  object-fit: cover;
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.about-gallery-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Middle Column - Cards */
+.about-middle {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1009,33 +1043,6 @@ button {
   font-size: 16px;
   font-weight: 700;
   color: #fff;
-}
-
-/* Gallery Stack - Two images */
-.about-gallery-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.about-gallery-image {
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  aspect-ratio: 1.3;
-  border-radius: 16px;
-  background: #17191e;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.about-gallery-image img {
-  object-fit: cover;
-  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.about-gallery-image:hover img {
-  transform: scale(1.05);
 }
 
 /* Contact Card */
@@ -1078,31 +1085,6 @@ button {
 
 .about-contact-phone:hover {
   color: var(--accent);
-}
-
-/* Middle Column - Center Image */
-.about-middle {
-  position: relative;
-}
-
-.about-gallery-center {
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  aspect-ratio: 0.85;
-  border-radius: 16px;
-  background: #17191e;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.about-gallery-center img {
-  object-fit: cover;
-  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.about-gallery-center:hover img {
-  transform: scale(1.05);
 }
 
 /* Right Column - Content & Stats */
@@ -2027,7 +2009,17 @@ button {
     padding: 14px 16px;
   }
 
+  .about-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .about-gallery-center {
+    aspect-ratio: 1.2;
+  }
+
+  .about-gallery-center-bottom {
     aspect-ratio: 1.2;
   }
 

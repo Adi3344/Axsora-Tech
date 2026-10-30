@@ -504,32 +504,34 @@ export default function Home() {
         ref={aboutRef}
       >
         <div className="about-container">
-          {/* Left Column - Cards */}
+          {/* Left Column - AI Images Side by Side */}
           <div className="about-left">
+            <div className="about-gallery-stack">
+              <figure className="about-gallery-image about-gallery-ai-1">
+                <Image
+                  src="/about-team/team-collaboration.jpg"
+                  alt="AI and machine learning solutions"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 28vw"
+                />
+              </figure>
+              <figure className="about-gallery-image about-gallery-ai-2">
+                <Image
+                  src="/about-team/team-planning.jpg"
+                  alt="Artificial intelligence development"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 28vw"
+                />
+              </figure>
+            </div>
+          </div>
+
+          {/* Middle Column - Cards */}
+          <div className="about-middle">
             {/* Experience Card */}
             <div className="about-experience-card">
               <div className="about-experience-icon">🏆</div>
               <div className="about-experience-text">10+ Years Excellence</div>
-            </div>
-
-            {/* Gallery Images */}
-            <div className="about-gallery-stack">
-              <figure className="about-gallery-image">
-                <Image
-                  src="/about-team/team-collaboration.jpg"
-                  alt="Global team collaboration"
-                  fill
-                  sizes="(max-width: 720px) 100vw, 28vw"
-                />
-              </figure>
-              <figure className="about-gallery-image">
-                <Image
-                  src="/about-team/team-planning.jpg"
-                  alt="Strategic digital transformation planning"
-                  fill
-                  sizes="(max-width: 720px) 100vw, 28vw"
-                />
-              </figure>
             </div>
 
             {/* Contact Card */}
@@ -540,18 +542,6 @@ export default function Home() {
                 <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
               </div>
             </div>
-          </div>
-
-          {/* Middle Column - Image */}
-          <div className="about-middle">
-            <figure className="about-gallery-center">
-              <Image
-                src="/about-team/team-workshop.jpg"
-                alt="Digital innovation and software development"
-                fill
-                sizes="(max-width: 720px) 100vw, 22vw"
-              />
-            </figure>
           </div>
 
           {/* Right Column - Content */}
