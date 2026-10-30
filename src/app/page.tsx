@@ -391,17 +391,12 @@ export default function Home() {
           <div className="hero-copy">
             <div className="hero-badge">
               <span className="hero-badge-mark" aria-hidden="true">✦</span>
-              <span>Helping ambitious businesses grow</span>
+              <span>Strategy · Creativity · Technology</span>
             </div>
-            <p className="eyebrow">Strategy · Creativity · Technology</p>
             <h1 aria-label="Grow your business with websites that sell, marketing that converts, AI that saves time, and apps customers love.">
               <span className="hero-heading-intro">Grow your business with</span>
               <HeroTypewriter />
             </h1>
-            <p className="hero-description">
-              We bring marketing, web, AI, and app development together to help your business stand
-              out, connect with customers, and grow.
-            </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#services">
                 Explore our services <ArrowUpRight size={16} aria-hidden="true" />
