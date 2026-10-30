@@ -29,7 +29,6 @@ const navigation = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Our process', href: '#process' },
   { label: 'FAQs', href: '#faqs' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -146,33 +145,6 @@ const services = [
     tags: ['iOS & Android', 'UX/UI design', 'Scalable backend'],
     video: '/WhatsApp Video 2026-10-29 at 12.59.31 AM (1).mp4',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80',
-  },
-];
-
-const process = [
-  {
-    number: '01',
-    title: 'Get to know you',
-    description:
-      'We listen first: your goals, your audience, and what success looks like for your business.',
-  },
-  {
-    number: '02',
-    title: 'Find the opportunity',
-    description:
-      'We research your market and map out the clearest path from your challenge to a smart solution.',
-  },
-  {
-    number: '03',
-    title: 'Make it happen',
-    description:
-      'Our team brings the plan to life with thoughtful design, reliable technology, and care.',
-  },
-  {
-    number: '04',
-    title: 'Keep growing',
-    description:
-      'We launch together, learn from the results, and keep improving as your business evolves.',
   },
 ];
 
@@ -640,24 +612,6 @@ export default function Home() {
       <FeaturedSolutions />
 
       <PortfolioShowcase />
-
-      <section className="process-section section-shell" id="process">
-        <div className="process-heading">
-          <div className="section-kicker"><span>03</span> Simple by design</div>
-          <h2>Clear steps.<br /><span>Better outcomes.</span></h2>
-          <p>Great work starts with a good conversation. Here&apos;s how we turn yours into progress.</p>
-        </div>
-        <div className="process-list">
-          {process.map((step) => (
-            <article className="process-step" key={step.number}>
-              <span className="process-number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              <ArrowUpRight className="process-arrow" size={20} aria-hidden="true" />
-            </article>
-          ))}
-        </div>
-      </section>
 
       <Testimonials />
 

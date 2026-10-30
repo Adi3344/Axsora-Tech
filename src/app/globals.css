@@ -3011,6 +3011,42 @@ html[data-theme='light'] .service-card-tags span { border-color: rgba(0,138,190,
 html[data-theme='light'] .portfolio-card::before { background: #b5c4e8; } html[data-theme='light'] .portfolio-card::after { background: #e8c8b9; } html[data-theme='light'] .portfolio-dots button { border-color: rgba(8,30,52,.45); }
 @media (max-width: 800px) { .portfolio-scroll-layout { min-height: auto; margin-top: 48px; }.portfolio-stage-track { position: relative; display: flex; gap: 8px; overflow-x: auto; padding: 0 0 22px; pointer-events: auto; }.portfolio-step { display: block; min-width: 145px; min-height: 70px; border-top: 1px solid var(--line); }.portfolio-step button { display: flex; min-height: 70px; padding-top: 14px; }.portfolio-sticky { position: relative; top: auto; width: 100%; transform: none; }.portfolio-dots { position: static; display: flex; justify-content: center; margin-top: 18px; transform: none; }.portfolio-card { grid-template-columns: 1fr; }.portfolio-card-image { min-height: 230px; margin: 0 24px 24px; order: -1; }.portfolio-card-copy { padding: 28px 24px; }.portfolio-card::before, .portfolio-card::after { display: none; } }
 
+@media (min-width: 801px) and (max-width: 1100px) {
+  .section-shell { padding-right: 5vw; padding-left: 5vw; }
+  .portfolio-sticky { width: min(100%, 820px); }
+  .portfolio-card { min-height: 500px; }
+  .portfolio-card-copy { padding: 34px 25px; }
+  .portfolio-card-copy h3 { font-size: clamp(24px, 3vw, 32px); }
+  .featured-solutions { gap: 45px; }
+  .why-values-layout { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 800px) {
+  .portfolio-stage-track { display: none; }
+  .portfolio-scroll-layout { min-height: auto; }
+  .portfolio-heading h2 { font-size: clamp(34px, 10vw, 48px); }
+  .portfolio-card { min-height: 0; }
+  .portfolio-card-copy h3 { font-size: clamp(25px, 7vw, 34px); }
+  .portfolio-card-copy h4 { margin-top: 20px; }
+  .testimonials-heading h2, .faq-heading h2, .contact-form-intro h2 { font-size: clamp(36px, 10vw, 52px); }
+  .faq-item button { grid-template-columns: 27px 1fr 20px; gap: 8px; }
+  .faq-item button strong { font-size: 12px; line-height: 1.45; }
+  .faq-item.is-open .faq-answer p { padding-left: 35px; }
+}
+
+@media (max-width: 480px) {
+  .section-shell { padding-right: 18px; padding-left: 18px; }
+  .portfolio-section { padding-top: 70px; padding-bottom: 80px; }
+  .portfolio-card-copy { padding: 24px 19px; }
+  .portfolio-card-image { margin-right: 19px; margin-left: 19px; }
+  .portfolio-card-category { font-size: 9px; }
+  .portfolio-tech span { font-size: 8px; }
+  .contact-form { padding: 20px 16px; }
+  .contact-submit { width: 100%; justify-content: center; }
+  .footer-main { grid-template-columns: 1fr; }
+  .footer-main > div:first-child { grid-column: auto; }
+}
+
 /* Testimonials, FAQs and contact */
 .testimonials-section, .faq-section, .contact-form-section { padding-top: 135px; padding-bottom: 135px; }
 .testimonials-section { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 9vw; }.testimonials-heading h2, .faq-heading h2, .contact-form-intro h2 { margin: 20px 0; color: var(--foreground); font-size: clamp(38px, 4.7vw, 66px); letter-spacing: -.075em; line-height: .98; }.testimonials-heading h2 span, .faq-heading h2 span, .contact-form-intro h2 span { color: var(--accent); }.testimonials-heading > p, .faq-heading > p, .contact-form-intro > p { max-width: 360px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }.testimonial-card { position: relative; min-height: 360px; padding: 52px 55px 35px; border: 1px solid rgba(0,191,255,.27); border-radius: 22px; background: linear-gradient(145deg, rgba(6,20,59,.92), rgba(255,255,255,.035)); box-shadow: 0 24px 70px rgba(0,0,0,.25); }.testimonial-quote-mark { position: absolute; top: 25px; right: 32px; color: var(--accent); opacity: .23; }.testimonial-quote { position: relative; max-width: 660px; margin: 0; color: var(--foreground); font-size: clamp(20px, 2.5vw, 32px); font-weight: 500; letter-spacing: -.04em; line-height: 1.35; }.testimonial-meta { display: flex; align-items: center; gap: 13px; margin-top: 38px; }.testimonial-avatar { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(0,191,255,.5); border-radius: 50%; background: rgba(0,191,255,.13); color: var(--accent); font-size: 11px; font-weight: 700; }.testimonial-meta div:last-child { display: grid; gap: 4px; }.testimonial-meta strong { font-size: 12px; }.testimonial-meta span { color: var(--muted); font-size: 10px; }.testimonial-controls { display: flex; align-items: center; gap: 8px; margin-top: 35px; color: var(--muted); font-size: 10px; }.testimonial-controls span { margin-right: auto; }.testimonial-controls button { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--foreground); cursor: pointer; transition: border-color .2s ease, color .2s ease; }.testimonial-controls button:hover { border-color: var(--accent); color: var(--accent); }

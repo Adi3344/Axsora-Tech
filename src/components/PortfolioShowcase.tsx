@@ -12,17 +12,29 @@ const projects = [
 
 export default function PortfolioShowcase() {
   const [activeProject, setActiveProject] = useState(0);
-  const stepRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActiveProject(Number((entry.target as HTMLElement).dataset.index));
-      });
-    }, { rootMargin: '-35% 0px -45% 0px', threshold: 0 });
-    stepRefs.current.forEach((step) => step && observer.observe(step));
-    return () => observer.disconnect();
+    const updateProject = () => {
+      const track = trackRef.current;
+      if (!track || window.innerWidth <= 800) return;
+      const trackTop = track.getBoundingClientRect().top + window.scrollY;
+      const index = Math.max(0, Math.min(projects.length - 1, Math.floor((window.scrollY - trackTop + window.innerHeight * .5) / window.innerHeight)));
+      setActiveProject(index);
+    };
+    updateProject();
+    window.addEventListener('scroll', updateProject, { passive: true });
+    window.addEventListener('resize', updateProject);
+    return () => { window.removeEventListener('scroll', updateProject); window.removeEventListener('resize', updateProject); };
   }, []);
+
+  const chooseProject = (index: number) => {
+    setActiveProject(index);
+    if (window.innerWidth > 800 && trackRef.current) {
+      const trackTop = trackRef.current.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: trackTop + index * window.innerHeight + 8, behavior: 'smooth' });
+    }
+  };
 
   const project = projects[activeProject];
   const ProjectIcon = project.icon;
@@ -51,12 +63,12 @@ export default function PortfolioShowcase() {
           </article>
           <div className="portfolio-progress"><span style={{ width: `${((activeProject + 1) / projects.length) * 100}%` }} /></div>
           <div className="portfolio-dots" aria-label="Choose portfolio project">
-            {projects.map((item, index) => <button type="button" className={activeProject === index ? 'is-active' : ''} onClick={() => setActiveProject(index)} aria-label={`Show ${item.title}`} key={item.title}><span /></button>)}
+            {projects.map((item, index) => <button type="button" className={activeProject === index ? 'is-active' : ''} onClick={() => chooseProject(index)} aria-label={`Show ${item.title}`} key={item.title}><span /></button>)}
           </div>
         </div>
-        <div className="portfolio-stage-track" aria-label="Portfolio projects">
+        <div className="portfolio-stage-track" ref={trackRef} aria-label="Portfolio projects">
           {projects.map((item, index) => (
-            <div className={`portfolio-step${activeProject === index ? ' is-active' : ''}`} data-index={index} ref={(element) => { stepRefs.current[index] = element; }} key={item.title} aria-hidden="true" />
+            <div className={`portfolio-step${activeProject === index ? ' is-active' : ''}`} data-index={index} key={item.title} aria-hidden="true" />
           ))}
         </div>
       </div>
