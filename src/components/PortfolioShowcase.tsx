@@ -12,28 +12,22 @@ const projects = [
 
 export default function PortfolioShowcase() {
   const [activeProject, setActiveProject] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const stepRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
-    const updateProject = () => {
-      const track = trackRef.current;
-      if (!track || window.innerWidth <= 800) return;
-      const trackTop = track.getBoundingClientRect().top + window.scrollY;
-      const index = Math.max(0, Math.min(projects.length - 1, Math.floor((window.scrollY - trackTop + window.innerHeight * .5) / window.innerHeight)));
-      setActiveProject(index);
-    };
-    updateProject();
-    window.addEventListener('scroll', updateProject, { passive: true });
-    window.addEventListener('resize', updateProject);
-    return () => { window.removeEventListener('scroll', updateProject); window.removeEventListener('resize', updateProject); };
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top - window.innerHeight * .5) - Math.abs(b.boundingClientRect.top - window.innerHeight * .5));
+      if (visible[0]) setActiveProject(Number((visible[0].target as HTMLElement).dataset.index));
+    }, { rootMargin: '-25% 0px -55% 0px', threshold: 0 });
+    stepRefs.current.forEach((step) => step && observer.observe(step));
+    return () => observer.disconnect();
   }, []);
 
   const chooseProject = (index: number) => {
     setActiveProject(index);
-    if (window.innerWidth > 800 && trackRef.current) {
-      const trackTop = trackRef.current.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: trackTop + index * window.innerHeight + 8, behavior: 'smooth' });
-    }
+    stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   const project = projects[activeProject];
@@ -47,6 +41,13 @@ export default function PortfolioShowcase() {
         <p>Selected work that shows how we turn complex challenges into clear, useful digital products.</p>
       </div>
       <div className="portfolio-scroll-layout section-shell">
+        <div className="portfolio-project-list" aria-label="Portfolio projects">
+          {projects.map((item, index) => (
+            <button className={`portfolio-project-step${activeProject === index ? ' is-active' : ''}`} data-index={index} ref={(element) => { stepRefs.current[index] = element; }} type="button" onClick={() => chooseProject(index)} key={item.title}>
+              <span>0{index + 1}</span><strong>{item.title}</strong><small>{item.category}</small>
+            </button>
+          ))}
+        </div>
         <div className="portfolio-sticky">
           <article className="portfolio-card" key={project.title}>
             <div className="portfolio-card-copy">
@@ -65,11 +66,6 @@ export default function PortfolioShowcase() {
           <div className="portfolio-dots" aria-label="Choose portfolio project">
             {projects.map((item, index) => <button type="button" className={activeProject === index ? 'is-active' : ''} onClick={() => chooseProject(index)} aria-label={`Show ${item.title}`} key={item.title}><span /></button>)}
           </div>
-        </div>
-        <div className="portfolio-stage-track" ref={trackRef} aria-label="Portfolio projects">
-          {projects.map((item, index) => (
-            <div className={`portfolio-step${activeProject === index ? ' is-active' : ''}`} data-index={index} key={item.title} aria-hidden="true" />
-          ))}
         </div>
       </div>
     </section>
