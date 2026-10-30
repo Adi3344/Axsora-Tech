@@ -1318,7 +1318,7 @@ button {
 
 /* Card body */
 .service-card-body {
-  padding: 28px 28px 32px;
+  padding: 60px 28px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
