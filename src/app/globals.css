@@ -3034,6 +3034,15 @@ html[data-theme='light'] .portfolio-card::before { background: #b5c4e8; } html[d
   .faq-item.is-open .faq-answer p { padding-left: 35px; }
 }
 
+/* Keep the desktop portfolio showcase pinned while the project list moves. */
+@media (min-width: 801px) {
+  .portfolio-section { overflow: visible; }
+  .portfolio-scroll-layout { align-items: start; }
+  .portfolio-project-list { min-height: 100%; }
+  .portfolio-sticky { position: sticky; top: 96px; align-self: start; height: max-content; }
+  .portfolio-card { will-change: opacity, transform; }
+}
+
 @media (min-width: 801px) {
   .portfolio-heading { max-width: 980px; margin-right: auto; margin-left: auto; text-align: left; }
   .portfolio-heading h2 { max-width: 620px; }
