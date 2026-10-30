@@ -504,26 +504,16 @@ export default function Home() {
         ref={aboutRef}
       >
         <div className="about-container">
-          {/* Left Column - AI Images Side by Side */}
+          {/* Left Column - Large AI Image */}
           <div className="about-left">
-            <div className="about-gallery-stack">
-              <figure className="about-gallery-image about-gallery-ai-1">
-                <Image
-                  src="/about-team/team-collaboration.jpg"
-                  alt="AI and machine learning solutions"
-                  fill
-                  sizes="(max-width: 720px) 100vw, 28vw"
-                />
-              </figure>
-              <figure className="about-gallery-image about-gallery-ai-2">
-                <Image
-                  src="/about-team/team-planning.jpg"
-                  alt="Artificial intelligence development"
-                  fill
-                  sizes="(max-width: 720px) 100vw, 28vw"
-                />
-              </figure>
-            </div>
+            <figure className="about-gallery-large">
+              <Image
+                src="/about-team/team-collaboration.jpg"
+                alt="AI and machine learning technology"
+                fill
+                sizes="(max-width: 720px) 100vw, 35vw"
+              />
+            </figure>
           </div>
 
           {/* Middle Column - Cards */}
