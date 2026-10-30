@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
 import Image from 'next/image';
 
 const navigation = [
@@ -302,9 +302,23 @@ function ServicePreview({ src }: { src: string }) {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
   const aboutRef = useRef<HTMLElement>(null);
 
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    const savedTheme = (localStorage.getItem('axsora_theme') as 'dark' | 'light') || 'light';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('axsora_theme', nextTheme);
+  };
 
   useEffect(() => {
     const section = aboutRef.current;
@@ -375,15 +389,27 @@ export default function Home() {
               ))}
             </nav>
 
-            <button
-              className="menu-toggle"
-              type="button"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((isOpen) => !isOpen)}
-            >
-              {menuOpen ? <X size={25} /> : <Menu size={25} />}
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <button
+                className="theme-toggle"
+                type="button"
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+                onClick={toggleTheme}
+                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+              </button>
+
+              <button
+                className="menu-toggle"
+                type="button"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((isOpen) => !isOpen)}
+              >
+                {menuOpen ? <X size={25} /> : <Menu size={25} />}
+              </button>
+            </div>
           </header>
         </div>
 
