@@ -504,42 +504,22 @@ export default function Home() {
         ref={aboutRef}
       >
         <div className="about-wrapper">
-          {/* Top Row - Image and Cards */}
-          <div className="about-top-row">
-            {/* Left Column - Large Team Image */}
+          {/* Two Column Layout - Image Left, Content Right */}
+          <div className="about-content-row">
+            {/* Left Column - Large Professional Team Image */}
             <div className="about-image-col">
               <figure className="about-gallery-large">
                 <Image
                   src="/about-team/team-collaboration.jpg"
-                  alt="Professional team working together in office"
+                  alt="Professional team working together with AI technology in modern office"
                   fill
-                  sizes="(max-width: 720px) 100vw, 45vw"
+                  sizes="(max-width: 720px) 100vw, 50vw"
                 />
               </figure>
             </div>
 
-            {/* Right Column - Cards */}
-            <div className="about-cards-col">
-              {/* Experience Card */}
-              <div className="about-experience-card">
-                <div className="about-experience-icon">🏆</div>
-                <div className="about-experience-text">10+ Years Excellence</div>
-              </div>
-
-              {/* Contact Card */}
-              <div className="about-contact-card">
-                <div className="about-contact-icon">📞</div>
-                <div className="about-contact-text">
-                  <div className="about-contact-label">Get Started</div>
-                  <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Row - Content */}
-          <div className="about-bottom-row">
-            <div className="about-content">
+            {/* Right Column - Content */}
+            <div className="about-content-col">
               <h2 id="about-title">
                 <span className="about-title-main">Digital Excellence Through</span>
                 <span className="about-title-highlight">Innovation & Technology</span>
