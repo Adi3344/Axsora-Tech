@@ -504,12 +504,12 @@ export default function Home() {
         ref={aboutRef}
       >
         <div className="about-container">
-          {/* Left Column - Large AI Image */}
+          {/* Left Column - Large Team Image */}
           <div className="about-left">
             <figure className="about-gallery-large">
               <Image
                 src="/about-team/team-collaboration.jpg"
-                alt="AI and machine learning technology"
+                alt="Professional team working together in office"
                 fill
                 sizes="(max-width: 720px) 100vw, 35vw"
               />
