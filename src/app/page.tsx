@@ -503,67 +503,90 @@ export default function Home() {
         aria-labelledby="about-title"
         ref={aboutRef}
       >
-        <div className="about-gallery" aria-label="Our team collaborating">
-          <div className="about-gallery-column about-gallery-column-left">
-            <figure className="about-gallery-card">
-              <Image
-                src="/about-team/team-collaboration.jpg"
-                alt="Team members collaborating around a laptop"
-                fill
-                sizes="(max-width: 720px) 46vw, 22vw"
-              />
-            </figure>
-            <figure className="about-gallery-card">
-              <Image
-                src="/about-team/team-planning.jpg"
-                alt="Colleagues sharing ideas during a project discussion"
-                fill
-                sizes="(max-width: 720px) 46vw, 22vw"
-              />
-            </figure>
+        <div className="about-container">
+          {/* Left Column - Cards & Contact */}
+          <div className="about-left">
+            {/* Experience Card */}
+            <div className="about-feature-card about-experience-card">
+              <div className="about-card-icon">
+                📅
+              </div>
+              <div className="about-card-content">
+                <h3>10+ Years Experience</h3>
+              </div>
+            </div>
+
+            {/* Gallery Images */}
+            <div className="about-gallery-compact">
+              <figure className="about-gallery-card-compact">
+                <Image
+                  src="/about-team/team-collaboration.jpg"
+                  alt="Team members collaborating around a laptop"
+                  fill
+                  sizes="(max-width: 720px) 46vw, 25vw"
+                />
+              </figure>
+              <figure className="about-gallery-card-compact">
+                <Image
+                  src="/about-team/team-planning.jpg"
+                  alt="Colleagues sharing ideas during a project discussion"
+                  fill
+                  sizes="(max-width: 720px) 46vw, 25vw"
+                />
+              </figure>
+            </div>
+
+            {/* Contact Card */}
+            <div className="about-contact-card">
+              <div className="about-contact-icon">📞</div>
+              <div className="about-contact-content">
+                <p className="about-contact-label">Contact Us</p>
+                <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
+              </div>
+            </div>
           </div>
-          <div className="about-gallery-column about-gallery-column-right">
-            <figure className="about-gallery-card">
+
+          {/* Middle Column - Code Image */}
+          <div className="about-middle">
+            <figure className="about-gallery-card-large">
               <Image
                 src="/about-team/team-workshop.jpg"
-                alt="A team working together during a strategy workshop"
+                alt="Developer working on code"
                 fill
-                sizes="(max-width: 720px) 46vw, 22vw"
-              />
-            </figure>
-            <figure className="about-gallery-card">
-              <Image
-                src="/about-team/team-discussion.jpg"
-                alt="Coworkers discussing ideas around a table"
-                fill
-                sizes="(max-width: 720px) 46vw, 22vw"
+                sizes="(max-width: 720px) 90vw, 35vw"
               />
             </figure>
           </div>
-        </div>
 
-        <div className="about-content">
-          <p className="about-kicker">About us</p>
-          <h2 id="about-title">
-            Your trusted partner for
-            <br />
-            <span>digital growth</span>
-          </h2>
-          <p className="about-description">
-            Axsora Tech brings social media, growth marketing, web design and development, AI
-            automation, and mobile app development together under one roof. We pair creative
-            thinking with practical technology to help businesses build stronger digital
-            experiences and keep growing.
-          </p>
-          <ul className="about-points">
-            <li>We listen closely to understand your goals and your customers.</li>
-            <li>Creative, marketing, and technology expertise work as one team.</li>
-            <li>We build thoughtful digital solutions around real business needs.</li>
-            <li>We support your project from the first conversation through launch.</li>
-          </ul>
-          <a className="about-contact-link" href="#contact">
-            Contact Us <ArrowRight size={18} aria-hidden="true" />
-          </a>
+          {/* Right Column - Content & Stats */}
+          <div className="about-right">
+            <div className="about-content-wrapper">
+              <h2 id="about-title">
+                <span className="about-title-main">Professional Website Development</span>
+                <span className="about-title-highlight">Company in Lahore</span>
+              </h2>
+              
+              <p className="about-description">
+                <strong>Axsora Tech</strong> is a trusted website development company in Lahore with over 10 years of experience. We specialize in building professional websites, high-converting online stores, and result-driven digital marketing campaigns for businesses across Pakistan, USA, UK, Europe, UAE, and worldwide. From website development and ecommerce website development Lahore to digital marketing, domain registration, and web hosting we deliver complete digital solutions under one roof. We are a SECP-registered private limited company (Registration No. 0282206) and a PSEB-registered IT firm (Registration No. Z-25-13574/25), committed to delivering quality, transparency, and long-term growth for our clients.
+              </p>
+
+              {/* Stats Grid */}
+              <div className="about-stats-grid">
+                <div className="about-stat about-stat-primary">
+                  <div className="about-stat-number">2,500 <span>+</span></div>
+                  <div className="about-stat-label">Projects Done</div>
+                </div>
+                <div className="about-stat">
+                  <div className="about-stat-number">15 <span>+</span></div>
+                  <div className="about-stat-label">Best Team</div>
+                </div>
+                <div className="about-stat">
+                  <div className="about-stat-number">10 <span>+</span></div>
+                  <div className="about-stat-label">Certifications</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
