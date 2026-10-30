@@ -503,65 +503,70 @@ export default function Home() {
         aria-labelledby="about-title"
         ref={aboutRef}
       >
-        <div className="about-container">
-          {/* Left Column - Large Team Image */}
-          <div className="about-left">
-            <figure className="about-gallery-large">
-              <Image
-                src="/about-team/team-collaboration.jpg"
-                alt="Professional team working together in office"
-                fill
-                sizes="(max-width: 720px) 100vw, 35vw"
-              />
-            </figure>
-          </div>
-
-          {/* Middle Column - Cards */}
-          <div className="about-middle">
-            {/* Experience Card */}
-            <div className="about-experience-card">
-              <div className="about-experience-icon">🏆</div>
-              <div className="about-experience-text">10+ Years Excellence</div>
+        <div className="about-wrapper">
+          {/* Top Row - Image and Cards */}
+          <div className="about-top-row">
+            {/* Left Column - Large Team Image */}
+            <div className="about-image-col">
+              <figure className="about-gallery-large">
+                <Image
+                  src="/about-team/team-collaboration.jpg"
+                  alt="Professional team working together in office"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 45vw"
+                />
+              </figure>
             </div>
 
-            {/* Contact Card */}
-            <div className="about-contact-card">
-              <div className="about-contact-icon">📞</div>
-              <div className="about-contact-text">
-                <div className="about-contact-label">Get Started</div>
-                <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
+            {/* Right Column - Cards */}
+            <div className="about-cards-col">
+              {/* Experience Card */}
+              <div className="about-experience-card">
+                <div className="about-experience-icon">🏆</div>
+                <div className="about-experience-text">10+ Years Excellence</div>
+              </div>
+
+              {/* Contact Card */}
+              <div className="about-contact-card">
+                <div className="about-contact-icon">📞</div>
+                <div className="about-contact-text">
+                  <div className="about-contact-label">Get Started</div>
+                  <a href="tel:+923005624325" className="about-contact-phone">+92 300-5624325</a>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Content */}
-          <div className="about-right">
-            <h2 id="about-title">
-              <span className="about-title-main">Digital Excellence Through</span>
-              <span className="about-title-highlight">Innovation & Technology</span>
-            </h2>
+          {/* Bottom Row - Content */}
+          <div className="about-bottom-row">
+            <div className="about-content">
+              <h2 id="about-title">
+                <span className="about-title-main">Digital Excellence Through</span>
+                <span className="about-title-highlight">Innovation & Technology</span>
+              </h2>
 
-            <p className="about-description">
-              <strong>Axsora Tech</strong> is a premier digital transformation company specializing in end-to-end web development, mobile applications, digital marketing, and enterprise software solutions. With over a decade of proven expertise, we empower businesses across Pakistan, North America, Europe, Middle East, and Asia-Pacific regions to achieve digital excellence through cutting-edge technology and strategic innovation.
-            </p>
+              <p className="about-description">
+                <strong>Axsora Tech</strong> is a premier digital transformation company specializing in end-to-end web development, mobile applications, digital marketing, and enterprise software solutions. With over a decade of proven expertise, we empower businesses across Pakistan, North America, Europe, Middle East, and Asia-Pacific regions to achieve digital excellence through cutting-edge technology and strategic innovation.
+              </p>
 
-            <p className="about-description">
-              Our multidisciplinary team of expert developers, UX/UI designers, and digital strategists delivers comprehensive digital solutions that drive measurable business growth. We combine technical excellence with strategic thinking to create scalable, secure, and future-ready digital ecosystems for enterprises of all sizes.
-            </p>
+              <p className="about-description">
+                Our multidisciplinary team of expert developers, UX/UI designers, and digital strategists delivers comprehensive digital solutions that drive measurable business growth. We combine technical excellence with strategic thinking to create scalable, secure, and future-ready digital ecosystems for enterprises of all sizes.
+              </p>
 
-            {/* Stats */}
-            <div className="about-stats">
-              <div className="about-stat-item about-stat-primary">
-                <div className="about-stat-number">500+ <span>+</span></div>
-                <div className="about-stat-label">Projects Delivered</div>
-              </div>
-              <div className="about-stat-item">
-                <div className="about-stat-number">50+ <span>+</span></div>
-                <div className="about-stat-label">Expert Professionals</div>
-              </div>
-              <div className="about-stat-item">
-                <div className="about-stat-number">30+ <span>+</span></div>
-                <div className="about-stat-label">Countries Served</div>
+              {/* Stats */}
+              <div className="about-stats">
+                <div className="about-stat-item about-stat-primary">
+                  <div className="about-stat-number">500+ <span>+</span></div>
+                  <div className="about-stat-label">Projects Delivered</div>
+                </div>
+                <div className="about-stat-item">
+                  <div className="about-stat-number">50+ <span>+</span></div>
+                  <div className="about-stat-label">Expert Professionals</div>
+                </div>
+                <div className="about-stat-item">
+                  <div className="about-stat-number">30+ <span>+</span></div>
+                  <div className="about-stat-label">Countries Served</div>
+                </div>
               </div>
             </div>
           </div>
