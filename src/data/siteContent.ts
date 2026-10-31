@@ -110,6 +110,7 @@ export function getProjectScreenshot(url: string) {
     'https://sacredqalam.com/': '/portfolio-screenshots/sacred-qalam.gif',
     'https://amarklogistics.com/': '/portfolio-screenshots/amark-logistics.gif',
     'https://chanceladyscoffee.com/': '/portfolio-screenshots/chanceladys-coffee.gif',
+    'https://spokenfree.com/': '/client-logos/spoken-free-hires.png',
   };
   return localScreenshots[url] ?? `https://image.thum.io/get/width/1400/crop/850/${url}`;
 }
@@ -139,6 +140,7 @@ export const portfolioProjects: PortfolioProject[] = [
   { slug: 'ready2sell-homes', name: 'Ready2Sell Homes', category: 'Property', description: 'A focused property platform designed to support lead generation and confident decisions.', url: 'https://ready2sell.homes/', image: '/client-logos/ready2sell-homes.png', service: 'AI & automation' },
   { slug: 'amark-logistics', name: 'Amark Logistics', category: 'Logistics', description: 'A clear business website for a logistics company built around reliable service and enquiries.', url: 'https://amarklogistics.com/', image: '/client-logos/amark-logistics-hires.webp', service: 'Growth marketing' },
   { slug: 'chanceladys-coffee', name: 'Chanceladys Coffee', category: 'Food & beverage', description: 'A welcoming brand experience for a coffee business with a memorable, community-led feel.', url: 'https://chanceladyscoffee.com/', image: '/client-logos/chanceladys-coffee.png', service: 'Growth marketing' },
+  { slug: 'spoken-free', name: 'Spoken Free', category: 'Mental health & community', description: 'A supportive community platform helping people share their stories, find hope, and grow through self-care.', url: 'https://spokenfree.com/', image: '/client-logos/spoken-free-hires.png', service: 'Web design & development' },
 ];
 
 export const blogPosts = [
