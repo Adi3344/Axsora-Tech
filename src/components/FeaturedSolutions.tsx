@@ -1,4 +1,5 @@
-import { ArrowUpRight, BrainCircuit, Eye, Layers3, Workflow } from 'lucide-react';
+import { ArrowUpRight, BrainCircuit, Eye, Workflow } from 'lucide-react';
+import Link from 'next/link';
 
 const capabilities = [
   { icon: BrainCircuit, title: 'AI strategy', text: 'Practical AI roadmaps that connect ambitious ideas to measurable business outcomes.' },
@@ -23,7 +24,7 @@ export default function FeaturedSolutions() {
             <article key={title} className="featured-capability"><Icon size={21} /><h3>{title}</h3><p>{text}</p></article>
           ))}
         </div>
-        <a className="featured-solutions-link" href="#contact">Explore our approach <ArrowUpRight size={16} /></a>
+        <Link className="featured-solutions-link" href="/services/ai-automations">Explore our approach <ArrowUpRight size={16} /></Link>
       </div>
     </section>
   );

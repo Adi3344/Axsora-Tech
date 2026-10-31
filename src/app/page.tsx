@@ -4,17 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
-  Bot,
-  Laptop,
-  Megaphone,
   Menu,
   Moon,
-  Share2,
-  Smartphone,
   Sun,
   X,
 } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FeaturedSolutions from '@/components/FeaturedSolutions';
 import PortfolioShowcase from '@/components/PortfolioShowcase';
@@ -24,11 +20,12 @@ import ContactSection from '@/components/ContactSection';
 import SiteFooter from '@/components/SiteFooter';
 
 const navigation = [
-  { label: 'Home', href: '#home' },
+  { label: 'Home', href: '/#home' },
   { label: 'Clients', href: '#clients' },
-  { label: 'About', href: '#about' },
+  { label: 'About', href: '/about' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQs', href: '#faqs' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -48,7 +45,6 @@ const clients: Client[] = [
   { name: 'UC Homes', href: 'https://uc-homes.co.uk/', logo: '/client-logos/uc-homes.png', logoBackground: 'white' },
   { name: 'CS750', href: 'https://cs750.com/', logo: null },
   { name: 'De Kinderen Auto', href: 'https://dekinderenauto.nl/', logo: '/client-logos/dekinderen-auto-hires.png', logoBackground: 'white' },
-  { name: 'Elegant Scalp Lux Spa', href: 'https://elegantscalpluxspa.com/', logo: '/client-logos/elegant-scalp-lux-spa.png', logoBackground: 'white' },
   { name: 'Wiktoria Nutrition', href: 'https://wiktorianutrition.co.uk/', logo: '/client-logos/wiktoria-nutrition-hires.png', logoBackground: 'white' },
   { name: 'Noma Counseling', href: 'https://nomacounseling.com/', logo: '/client-logos/noma-counseling-hires.png', logoBackground: 'white' },
   { name: 'Renu Wound Care', href: 'https://renuwoundcare.com/', logo: '/client-logos/renu-wound-care-hires.png', logoBackground: 'navy' },
@@ -61,11 +57,8 @@ const clients: Client[] = [
   { name: 'Capraxis', href: 'http://capraxis.com/', logo: '/client-logos/capraxis-wordmark.png', logoBackground: 'white' },
   { name: 'Warm Walks Inc.', href: 'https://www.warmwalksinc.com/', logo: '/client-logos/warm-walks-hires.webp', logoBackground: 'white' },
   { name: 'Todle Legal', href: 'https://todlelegal.com/', logo: '/client-logos/todle-legal.png', logoBackground: 'white' },
-  { name: 'RS Motors', href: 'https://rs-motors.fr/', logo: '/client-logos/rs-motors.png', logoBackground: 'white' },
   { name: 'RCF Inc.', href: 'https://rcfinc.org/', logo: '/client-logos/rcf-inc-hires.jpg', logoBackground: 'white' },
-  { name: 'Spoken Free', href: 'https://spokenfree.com/', logo: '/client-logos/spoken-free-hires.png', logoBackground: 'white' },
   { name: 'Sacred Qalam', href: 'https://sacredqalam.com/', logo: '/client-logos/sacred-qalam.png', logoBackground: 'white' },
-  { name: 'Aeterna Gin', href: 'https://aeternagin.it/', logo: '/client-logos/aeterna-gin.png', logoBackground: 'dark' },
   { name: 'Ready2Sell Homes', href: 'https://ready2sell.homes/', logo: '/client-logos/ready2sell-homes.png', logoBackground: 'white' },
   { name: 'Amark Logistics', href: 'https://amarklogistics.com/', logo: '/client-logos/amark-logistics-hires.webp', logoBackground: 'white' },
   { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png', logoBackground: 'white' },
@@ -83,9 +76,7 @@ const featuredClientNames = new Set([
   'Truston Finance',
   'Capraxis',
   'Warm Walks Inc.',
-  'RS Motors',
   'RCF Inc.',
-  'Spoken Free',
   'Sacred Qalam',
   'Amark Logistics',
 ]);
@@ -146,6 +137,14 @@ const services = [
     video: '/WhatsApp Video 2026-10-29 at 12.59.31 AM (1).mp4',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80',
   },
+];
+
+const serviceSlugs = [
+  'social-media-management',
+  'growth-marketing',
+  'web-design-development',
+  'ai-automations',
+  'mobile-app-development',
 ];
 
 function ClientLogoCard({
@@ -329,16 +328,17 @@ function HeroParticles() {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>('light');
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') return 'light';
+    return (localStorage.getItem('axsora_theme') as 'dark' | 'light') || 'light';
+  });
   const aboutRef = useRef<HTMLElement>(null);
 
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
-    const savedTheme = (localStorage.getItem('axsora_theme') as 'dark' | 'light') || 'light';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -375,7 +375,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           aria-hidden="true"
         />
         <video
@@ -385,7 +385,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           aria-hidden="true"
         />
         <HeroParticles />
@@ -533,7 +533,7 @@ export default function Home() {
             <div className="about-content-col">
               <h2 id="about-title">
                 <span className="about-title-main">Digital Excellence Through</span>
-                <span className="about-title-highlight">Innovation & Technology</span>
+            <Link className="about-title-highlight" href="/about">Innovation & Technology</Link>
               </h2>
 
               <p className="about-description">
@@ -591,9 +591,9 @@ export default function Home() {
                 <div className="service-card-tags">
                   {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
-                <a className="service-card-btn" href="#contact">
+                <Link className="service-card-btn" href={`/services/${serviceSlugs[Number(service.number) - 1]}`}>
                   Learn More <ArrowRight size={16} aria-hidden="true" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
@@ -601,9 +601,9 @@ export default function Home() {
 
         <div className="services-footer">
           <span className="services-footer-text">Lets Discover More</span>
-          <a className="services-footer-link" href="#contact">
+          <Link className="services-footer-link" href="/services/web-design-development">
             See All Services <ArrowRight size={15} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
       </section>
 
