@@ -33,7 +33,7 @@ export default function TechnologyStack() {
         <h2 id="technology-stack-title">Modern tools for thoughtful digital work.</h2>
         <p>We choose technologies and platforms to fit the needs of each project—not the other way around.</p>
       </div>
-      <div className="technology-stack-grid">
+      <div className="technology-stack-grid" role="region" aria-label="Technology and platform list" tabIndex={0}>
         {technologies.map((technology, index) => (
           <div className="technology-tile" key={`${technology.name}-${index}`}>
             <span aria-hidden="true">{technology.mark}</span>

@@ -6290,3 +6290,81 @@ html[data-theme='light'] .portfolio-feature-focus h4 {
     width: 62%;
   }
 }
+
+@media (max-width: 760px) {
+  .services-grid-genxe {
+    align-items: start;
+    row-gap: 96px;
+  }
+
+  .service-card-genxe {
+    min-width: 0;
+  }
+
+  .service-card-video-wrap {
+    top: -42px;
+    height: 190px;
+    min-height: 0;
+  }
+
+  .service-card-genxe {
+    padding-top: 114px;
+  }
+
+  .why-value-item {
+    grid-template-columns: minmax(0, 1fr) 24px;
+    grid-template-areas:
+      "number arrow"
+      "icon arrow"
+      "copy copy";
+    align-items: start;
+    gap: 12px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .why-value-number { grid-area: number; }
+  .why-value-icon { grid-area: icon; }
+  .why-value-copy { grid-area: copy; }
+  .why-value-arrow { grid-area: arrow; justify-self: end; }
+
+  .why-value-copy small {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
+
+.technology-stack-grid {
+  grid-auto-columns: clamp(112px, 12vw, 150px);
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding: 4px 2px 14px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: rgba(0, 191, 255, 0.55) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.technology-tile {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.technology-stack-grid:focus-visible {
+  outline: 2px solid #00bfff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .technology-stack-grid {
+    grid-auto-columns: 112px;
+    gap: 10px;
+  }
+
+  .technology-tile {
+    min-height: 94px;
+  }
+}

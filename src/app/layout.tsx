@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="dark"
+      data-theme="light"
       className={`${montserrat.variable} h-full antialiased`}
       style={{ scrollBehavior: 'smooth' }}
     >
