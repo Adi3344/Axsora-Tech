@@ -24,7 +24,7 @@ export default function FeaturedSolutions() {
             <article key={title} className="featured-capability"><Icon size={21} /><h3>{title}</h3><p>{text}</p></article>
           ))}
         </div>
-        <Link className="featured-solutions-link" href="/services/ai-automations">Explore our approach <ArrowUpRight size={16} /></Link>
+        <Link className="featured-solutions-link" href="/#services">Explore our services <ArrowUpRight size={16} /></Link>
       </div>
     </section>
   );

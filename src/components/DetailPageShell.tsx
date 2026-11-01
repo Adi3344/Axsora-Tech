@@ -18,8 +18,8 @@ export default function DetailPageShell({
       <header className="detail-header section-shell">
         <Link className="detail-brand" href="/">axsora<span>tech</span></Link>
         <nav className="detail-nav" aria-label="Page navigation">
-          <Link href="/about">About</Link>
-          <Link href="/services/social-media-management">Services</Link>
+          <Link href="/#about">About</Link>
+          <Link href="/#services">Services</Link>
           <Link href="/blog">Blog</Link>
           <Link className="detail-nav-cta" href="/#contact">Get a quote <ArrowUpRight size={14} /></Link>
         </nav>

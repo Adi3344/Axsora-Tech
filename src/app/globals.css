@@ -2299,17 +2299,17 @@ html[data-theme='light'] .brand {
 }
 
 html[data-theme='light'] .brand-tech {
-  color: #00b4f0;
+  color: #007fa8;
   font-weight: 600;
 }
 
 html[data-theme='light'] .main-nav {
-  color: #4b5162;
+  color: #007fa8;
 }
 
 html[data-theme='light'] .main-nav > a:not(.nav-cta):hover,
 html[data-theme='light'] .text-link:hover {
-  color: #0099cc;
+  color: #006987;
 }
 
 html[data-theme='light'] .theme-toggle {
@@ -3419,7 +3419,7 @@ html[data-theme='light'] .portfolio-feature {
 
   html[data-theme='light'] .main-nav > a:not(.nav-cta) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    color: #0a0b0e;
+    color: #007fa8;
   }
 }
 

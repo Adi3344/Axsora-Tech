@@ -22,7 +22,7 @@ import SiteFooter from '@/components/SiteFooter';
 const navigation = [
   { label: 'Home', href: '/#home' },
   { label: 'Clients', href: '#clients' },
-  { label: 'About', href: '/about' },
+  { label: 'About', href: '/#about' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Blog', href: '/blog' },
@@ -60,22 +60,7 @@ const clients: Client[] = [
   { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png', logoBackground: 'white' },
 ];
 
-const featuredClientNames = new Set([
-  'London Plant Maintenance',
-  'Edge Pro Roofing',
-  'A2Z Finance Protection',
-  'De Kinderen Auto',
-  'Wiktoria Nutrition',
-  'Noma Counseling',
-  'Truston Finance',
-  'Capraxis',
-  'Warm Walks Inc.',
-  'RCF Inc.',
-  'Amark Logistics',
-]);
-const featuredClients = clients.filter(
-  (client) => client.logo && featuredClientNames.has(client.name),
-);
+const featuredClients = clients;
 
 const heroPhrases = [
   { before: '', accent: 'Websites that sell', after: '.' },
@@ -130,14 +115,6 @@ const services = [
     video: '/WhatsApp Video 2026-10-29 at 12.59.31 AM (1).mp4',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80',
   },
-];
-
-const serviceSlugs = [
-  'social-media-management',
-  'growth-marketing',
-  'web-design-development',
-  'ai-automations',
-  'mobile-app-development',
 ];
 
 function ClientLogoCard({
@@ -483,11 +460,8 @@ export default function Home() {
           </p>
         </div>
         <div className="client-marquees" aria-label="Client website logos">
-          {[featuredClients.slice(0, 8), featuredClients.slice(8)].map((row, rowIndex) => (
-            <div
-              className={`client-marquee-row${rowIndex === 1 ? ' client-marquee-row-reverse' : ''}`}
-              key={rowIndex}
-            >
+          {[featuredClients].map((row) => (
+            <div className="client-marquee-row" key="all-clients">
               <div className="client-track">
                 {row.map((client) => (
                   <ClientLogoCard client={client} key={client.href} />
@@ -526,7 +500,7 @@ export default function Home() {
             <div className="about-content-col">
               <h2 id="about-title">
                 <span className="about-title-main">Digital Excellence Through</span>
-                <Link className="about-title-highlight" href="/about">Innovation &amp; Technology</Link>
+                <span className="about-title-highlight">Innovation &amp; Technology</span>
               </h2>
 
               <p className="about-description">
@@ -584,8 +558,8 @@ export default function Home() {
                 <div className="service-card-tags">
                   {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
-                <Link className="service-card-btn" href={`/services/${serviceSlugs[Number(service.number) - 1]}`}>
-                  Learn More <ArrowRight size={16} aria-hidden="true" />
+                <Link className="service-card-btn" href="#contact">
+                  Discuss this service <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               </div>
             </article>
@@ -594,8 +568,8 @@ export default function Home() {
 
         <div className="services-footer">
           <span className="services-footer-text">Lets Discover More</span>
-          <Link className="services-footer-link" href="/services/web-design-development">
-            See All Services <ArrowRight size={15} aria-hidden="true" />
+          <Link className="services-footer-link" href="#contact">
+            Discuss your project <ArrowRight size={15} aria-hidden="true" />
           </Link>
         </div>
       </section>
