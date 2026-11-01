@@ -7,11 +7,11 @@ import { useRef, useState, type KeyboardEvent } from 'react';
 import { getProjectScreenshot, portfolioProjects } from '@/data/siteContent';
 
 const featuredSlugs = [
-  'de-kinderen-auto',
-  'sacred-qalam',
-  'ready2sell-homes',
-  'igo-above',
-  'wiktoria-nutrition',
+  'a2z-finance-protection',
+  'verdikt-studios',
+  'chanceladys-coffee',
+  'amark-logistics',
+  'capraxis',
 ];
 const projects = featuredSlugs
   .map((slug) => portfolioProjects.find((project) => project.slug === slug))
