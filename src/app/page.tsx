@@ -38,7 +38,6 @@ type Client = {
 };
 
 const clients: Client[] = [
-  { name: 'I Go Above', href: 'https://igoabove.com/', logo: '/client-logos/igoabove-hires.png', logoBackground: 'white' },
   { name: 'London Plant Maintenance', href: 'https://londonplantmaintenance.co.uk/', logo: '/client-logos/londonplantmaintenance.png', logoBackground: 'white' },
   { name: 'Edge Pro Roofing', href: 'https://edgeproroofing.com/', logo: '/client-logos/edgepro-roofing.png', logoBackground: 'navy' },
   { name: 'A2Z Finance Protection', href: 'https://a2zfinanceprotection.co.uk/', logo: '/client-logos/a2z-finance-protection-hires.png', logoBackground: 'white' },
@@ -47,37 +46,31 @@ const clients: Client[] = [
   { name: 'De Kinderen Auto', href: 'https://dekinderenauto.nl/', logo: '/client-logos/dekinderen-auto-hires.png', logoBackground: 'white' },
   { name: 'Wiktoria Nutrition', href: 'https://wiktorianutrition.co.uk/', logo: '/client-logos/wiktoria-nutrition-hires.png', logoBackground: 'white' },
   { name: 'Noma Counseling', href: 'https://nomacounseling.com/', logo: '/client-logos/noma-counseling-hires.png', logoBackground: 'white' },
-  { name: 'Renu Wound Care', href: 'https://renuwoundcare.com/', logo: '/client-logos/renu-wound-care-hires.png', logoBackground: 'navy' },
   { name: 'Avera Travel', href: 'https://averatravel.com/', logo: '/client-logos/avera-travel.png', logoBackground: 'white' },
   { name: 'Verdikt Studios', href: 'https://verdiktstudios.com/', logo: null },
   { name: 'Bani Jewellers', href: 'https://banijewellers.com/', logo: '/client-logos/bani-jewellers.png', logoBackground: 'white' },
   { name: 'Truston Finance', href: 'https://trustonfinance.nl/', logo: '/client-logos/truston-finance-hires.png', logoBackground: 'navy' },
   { name: 'Cogen THC', href: 'https://cogenthc.com/', logo: '/client-logos/cogen-thc.png', logoBackground: 'white' },
-  { name: 'Stella Legal Solutions', href: 'https://stellalegalsolutions.com/', logo: '/client-logos/stella-legal-solutions.png', logoBackground: 'white' },
   { name: 'Capraxis', href: 'http://capraxis.com/', logo: '/client-logos/capraxis-wordmark.png', logoBackground: 'white' },
   { name: 'Warm Walks Inc.', href: 'https://www.warmwalksinc.com/', logo: '/client-logos/warm-walks-hires.webp', logoBackground: 'white' },
   { name: 'Todle Legal', href: 'https://todlelegal.com/', logo: '/client-logos/todle-legal.png', logoBackground: 'white' },
   { name: 'RCF Inc.', href: 'https://rcfinc.org/', logo: '/client-logos/rcf-inc-hires.jpg', logoBackground: 'white' },
-  { name: 'Sacred Qalam', href: 'https://sacredqalam.com/', logo: '/client-logos/sacred-qalam.png', logoBackground: 'white' },
   { name: 'Ready2Sell Homes', href: 'https://ready2sell.homes/', logo: '/client-logos/ready2sell-homes.png', logoBackground: 'white' },
   { name: 'Amark Logistics', href: 'https://amarklogistics.com/', logo: '/client-logos/amark-logistics-hires.webp', logoBackground: 'white' },
   { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png', logoBackground: 'white' },
 ];
 
 const featuredClientNames = new Set([
-  'I Go Above',
   'London Plant Maintenance',
   'Edge Pro Roofing',
   'A2Z Finance Protection',
   'De Kinderen Auto',
   'Wiktoria Nutrition',
   'Noma Counseling',
-  'Renu Wound Care',
   'Truston Finance',
   'Capraxis',
   'Warm Walks Inc.',
   'RCF Inc.',
-  'Sacred Qalam',
   'Amark Logistics',
 ]);
 const featuredClients = clients.filter(
