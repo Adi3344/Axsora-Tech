@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import SiteFooter from '@/components/SiteFooter';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function DetailPageShell({
   eyebrow,
@@ -20,8 +21,8 @@ export default function DetailPageShell({
         <nav className="detail-nav" aria-label="Page navigation">
           <Link href="/#about">About</Link>
           <Link href="/#services">Services</Link>
-          <Link href="/blog">Blog</Link>
           <Link className="detail-nav-cta" href="/#contact">Get a quote <ArrowUpRight size={14} /></Link>
+          <ThemeToggle />
         </nav>
       </header>
       <section className="detail-hero section-shell">

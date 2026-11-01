@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -13,13 +13,17 @@ export const metadata: Metadata = {
   title: "Axsora Tech - Transform Your Ideas Into Reality",
   description: "Social Media Management, Marketing, Web Development, AI Automations, and Mobile App Development services",
   keywords: ["social media management", "marketing", "web development", "AI automations", "mobile app development"],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
     title: "Axsora Tech - Transform Your Ideas Into Reality",
     description: "Comprehensive digital solutions for your business growth",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({

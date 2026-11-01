@@ -3821,3 +3821,97 @@ html[data-theme='light'] .portfolio-feature {
     transition: none;
   }
 }
+
+/* Improve default reading size and tighten desktop section rhythm. */
+:root {
+  --font-size-body: 1rem;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+main p:not(.section-kicker) {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.main-nav,
+.detail-nav {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.about-description,
+.why-heading-row > p,
+.why-value-copy small,
+.featured-solutions > div > p,
+.portfolio-feature-description,
+.testimonials-heading > p,
+.faq-heading > p,
+.faq-answer p,
+.contact-form-intro > p,
+.contact-details a,
+.contact-details span,
+.contact-form label,
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.footer-main > div:first-child p,
+.footer-column,
+.detail-intro,
+.detail-outcomes p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.contact-form option {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.contact-form label {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.footer-column > span {
+  font-size: 0.8125rem;
+}
+
+.testimonials-section,
+.faq-section,
+.contact-form-section {
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+
+.clients-section,
+.about-section,
+.services-section,
+.why-section,
+.featured-solutions,
+.portfolio-section {
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+
+.detail-nav .theme-toggle {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 800px) {
+  .clients-section,
+  .about-section,
+  .services-section,
+  .why-section,
+  .featured-solutions,
+  .portfolio-section,
+  .testimonials-section,
+  .faq-section,
+  .contact-form-section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+}

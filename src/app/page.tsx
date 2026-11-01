@@ -5,8 +5,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Menu,
-  Moon,
-  Sun,
   X,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -18,6 +16,7 @@ import Testimonials from '@/components/Testimonials';
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
 import SiteFooter from '@/components/SiteFooter';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const navigation = [
   { label: 'Home', href: '/#home' },
@@ -25,7 +24,6 @@ const navigation = [
   { label: 'About', href: '/#about' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Blog', href: '/blog' },
   { label: 'FAQs', href: '#faqs' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -300,24 +298,9 @@ function HeroParticles() {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    if (typeof window === 'undefined') return 'light';
-    return (localStorage.getItem('axsora_theme') as 'dark' | 'light') || 'light';
-  });
   const aboutRef = useRef<HTMLElement>(null);
 
   const closeMenu = () => setMenuOpen(false);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('axsora_theme', nextTheme);
-  };
 
   useEffect(() => {
     const section = aboutRef.current;
@@ -390,15 +373,7 @@ export default function Home() {
             </nav>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <button
-                className="theme-toggle"
-                type="button"
-                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-                onClick={toggleTheme}
-                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-              >
-                {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-              </button>
+              <ThemeToggle />
 
               <button
                 className="menu-toggle"
