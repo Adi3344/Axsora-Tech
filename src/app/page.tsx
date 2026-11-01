@@ -493,11 +493,7 @@ export default function Home() {
             A few of the businesses we&apos;re proud to work alongside.
           </p>
         </div>
-<<<<<<< HEAD
-        <div className="client-marquees" aria-label="Client website logos">
-=======
         <div className="client-marquees" aria-label="Client website previews">
->>>>>>> 3656657 (Update portfolio website previews)
           {[featuredClients.slice(0, 8), featuredClients.slice(8)].map((row, rowIndex) => (
             <div
               className={`client-marquee-row${rowIndex === 1 ? ' client-marquee-row-reverse' : ''}`}
