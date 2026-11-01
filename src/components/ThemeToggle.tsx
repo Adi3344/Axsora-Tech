@@ -4,11 +4,11 @@ import { Moon, Sun } from 'lucide-react';
 import { useEffect, useSyncExternalStore } from 'react';
 
 function getTheme(): 'dark' | 'light' {
-  return localStorage.getItem('axsora_theme') === 'dark' ? 'dark' : 'light';
+  return localStorage.getItem('axsora_theme') === 'light' ? 'light' : 'dark';
 }
 
 function getServerTheme(): 'dark' | 'light' {
-  return 'light';
+  return 'dark';
 }
 
 function subscribeToTheme(onChange: () => void) {

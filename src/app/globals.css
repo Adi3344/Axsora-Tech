@@ -4438,3 +4438,17 @@ html[data-theme='light'] .testimonial-service {
     font-size: 0.68rem;
   }
 }
+
+.testimonial-avatar--logo {
+  padding: 5px;
+  border: 1px solid rgba(0, 191, 255, 0.35);
+  background: #fff;
+}
+
+.testimonial-avatar--logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
