@@ -533,7 +533,7 @@ export default function Home() {
             <div className="about-content-col">
               <h2 id="about-title">
                 <span className="about-title-main">Digital Excellence Through</span>
-            <Link className="about-title-highlight" href="/about">Innovation & Technology</Link>
+                <Link className="about-title-highlight" href="/about">Innovation &amp; Technology</Link>
               </h2>
 
               <p className="about-description">
@@ -547,15 +547,15 @@ export default function Home() {
               {/* Stats */}
               <div className="about-stats">
                 <div className="about-stat-item about-stat-primary">
-                  <div className="about-stat-number">500+ <span>+</span></div>
+                  <div className="about-stat-number">500+</div>
                   <div className="about-stat-label">Projects Delivered</div>
                 </div>
                 <div className="about-stat-item">
-                  <div className="about-stat-number">50+ <span>+</span></div>
+                  <div className="about-stat-number">50+</div>
                   <div className="about-stat-label">Expert Professionals</div>
                 </div>
                 <div className="about-stat-item">
-                  <div className="about-stat-number">30+ <span>+</span></div>
+                  <div className="about-stat-number">30+</div>
                   <div className="about-stat-label">Countries Served</div>
                 </div>
               </div>
