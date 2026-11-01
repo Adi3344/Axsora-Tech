@@ -7,6 +7,10 @@
   --accent: #00bfff;
   --brand-navy: #06143b;
   --line: rgba(255, 255, 255, 0.12);
+  --font-family-sans: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  --font-size-section-heading: clamp(2rem, 4.2vw, 3.5rem);
+  --font-size-card-heading: clamp(1.125rem, 1.6vw, 1.25rem);
+  --font-size-body: 0.8125rem;
 }
 html[data-theme='light'] {
   --background: #fbfbfd;
@@ -37,14 +41,17 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-sans);
   -webkit-font-smoothing: antialiased;
 }
 
 body,
 button,
+input,
+select,
+textarea,
 a {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-sans);
 }
 
 a {
@@ -3539,9 +3546,51 @@ html[data-theme='light'] .portfolio-feature {
   }
 }
 
+/* Keep section typography on a consistent, responsive scale. */
+#about-title {
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+.section-heading h2,
+.services-title,
+.clients-heading h2,
+.featured-solutions-content h2,
+.portfolio-heading h2,
+.why-heading h2,
+.portfolio-redesign-title-row h2,
+.testimonials-heading h2,
+.faq-heading h2,
+.contact-form-intro h2,
+.detail-section-heading h2,
+.detail-cta h2,
+.blog-note h2 {
+  font-size: var(--font-size-section-heading);
+}
+
+.services-title {
+  line-height: 1.06;
+}
+
+.service-card-title,
+.featured-capability h3,
+.about-values h3,
+.detail-outcomes h3 {
+  font-size: var(--font-size-card-heading);
+}
+
+.about-description,
+.service-card-desc,
+.featured-solutions-content > p,
+.portfolio-feature-description,
+.why-heading-row > p,
+.testimonials-heading > p,
+.faq-heading > p,
+.contact-form-intro > p {
+  font-size: var(--font-size-body);
+}
+
 /* Keep the About heading lines unbroken and give each metric equal weight. */
 #about-title {
-  font-size: clamp(30px, 3vw, 42px);
   line-height: 1.08;
 }
 
@@ -3611,12 +3660,6 @@ html[data-theme='light'] .portfolio-feature {
 .about-section .about-stat-primary .about-stat-number,
 .about-section .about-stat-primary .about-stat-label {
   color: #021022;
-}
-
-@media (max-width: 760px) {
-  #about-title {
-    font-size: clamp(26px, 6.5vw, 36px);
-  }
 }
 
 @media (max-width: 520px) {
