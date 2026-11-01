@@ -7,7 +7,7 @@ import { useRef, useState, type KeyboardEvent } from 'react';
 import { getProjectScreenshot, portfolioProjects } from '@/data/siteContent';
 
 const featuredSlugs = [
-  'spoken-free',
+  'de-kinderen-auto',
   'sacred-qalam',
   'ready2sell-homes',
   'igo-above',
