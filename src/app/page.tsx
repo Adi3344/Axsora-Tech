@@ -18,6 +18,7 @@ import Testimonials from '@/components/Testimonials';
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
 import SiteFooter from '@/components/SiteFooter';
+import { getProjectScreenshot } from '@/data/siteContent';
 
 const navigation = [
   { label: 'Home', href: '/#home' },
@@ -80,9 +81,12 @@ const featuredClientNames = new Set([
   'Sacred Qalam',
   'Amark Logistics',
 ]);
-const featuredClients = clients.filter(
-  (client) => client.logo && featuredClientNames.has(client.name),
-);
+const featuredClients = clients
+  .filter((client) => client.logo && featuredClientNames.has(client.name))
+  .map((client) => ({
+    ...client,
+    logo: getProjectScreenshot(client.href),
+  }));
 
 const heroPhrases = [
   { before: '', accent: 'Websites that sell', after: '.' },
@@ -489,7 +493,11 @@ export default function Home() {
             A few of the businesses we&apos;re proud to work alongside.
           </p>
         </div>
+<<<<<<< HEAD
         <div className="client-marquees" aria-label="Client website logos">
+=======
+        <div className="client-marquees" aria-label="Client website previews">
+>>>>>>> 3656657 (Update portfolio website previews)
           {[featuredClients.slice(0, 8), featuredClients.slice(8)].map((row, rowIndex) => (
             <div
               className={`client-marquee-row${rowIndex === 1 ? ' client-marquee-row-reverse' : ''}`}
