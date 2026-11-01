@@ -71,6 +71,7 @@ const heroPhrases = [
 
 const services = [
   {
+    slug: 'social-media-management',
     number: '01',
     title: 'Social Media\nManagement',
     description:
@@ -80,6 +81,7 @@ const services = [
     image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80',
   },
   {
+    slug: 'growth-marketing',
     number: '02',
     title: 'Growth\nMarketing',
     description:
@@ -89,6 +91,7 @@ const services = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
   },
   {
+    slug: 'web-design-development',
     number: '03',
     title: 'Web Design &\nDevelopment',
     description:
@@ -98,6 +101,7 @@ const services = [
     image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
   },
   {
+    slug: 'ai-automations',
     number: '04',
     title: 'AI\nAutomations',
     description:
@@ -107,6 +111,7 @@ const services = [
     image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80',
   },
   {
+    slug: 'mobile-app-development',
     number: '05',
     title: 'Mobile App\nDevelopment',
     description:
@@ -535,8 +540,8 @@ export default function Home() {
                 <div className="service-card-tags">
                   {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
-                <Link className="service-card-btn" href="#contact">
-                  Discuss this service <ArrowRight size={16} aria-hidden="true" />
+                <Link className="service-card-btn" href={`/services/${service.slug}`}>
+                  Explore service <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               </div>
             </article>

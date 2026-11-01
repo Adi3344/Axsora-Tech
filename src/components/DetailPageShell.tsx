@@ -8,11 +8,15 @@ export default function DetailPageShell({
   title,
   intro,
   children,
+  actionHref = '/#contact',
+  actionLabel = 'Get a quote',
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro: string;
   children: React.ReactNode;
+  actionHref?: string;
+  actionLabel?: string;
 }) {
   return (
     <main className="detail-page">
@@ -21,7 +25,7 @@ export default function DetailPageShell({
         <nav className="detail-nav" aria-label="Page navigation">
           <Link href="/#about">About</Link>
           <Link href="/#services">Services</Link>
-          <Link className="detail-nav-cta" href="/#contact">Get a quote <ArrowUpRight size={14} /></Link>
+          <Link className="detail-nav-cta" href={actionHref}>{actionLabel} <ArrowUpRight size={14} /></Link>
           <ThemeToggle />
         </nav>
       </header>
@@ -31,14 +35,14 @@ export default function DetailPageShell({
           <p className="detail-eyebrow">{eyebrow}</p>
           <h1>{title}</h1>
           <p className="detail-intro">{intro}</p>
-          <Link className="detail-primary-button" href="/#contact">Start a conversation <ArrowUpRight size={16} /></Link>
+          <Link className="detail-primary-button" href={actionHref}>Start a conversation <ArrowUpRight size={16} /></Link>
         </div>
         <div className="detail-hero-orbit" aria-hidden="true"><span>AX</span><i /><i /><i /></div>
       </section>
       {children}
       <section className="detail-cta section-shell">
         <div><p className="detail-eyebrow">READY WHEN YOU ARE</p><h2>Let&apos;s make the next move count.</h2></div>
-        <Link className="detail-primary-button" href="/#contact">Talk to our team <ArrowRight size={16} /></Link>
+        <Link className="detail-primary-button" href={actionHref}>Talk to our team <ArrowRight size={16} /></Link>
       </section>
       <SiteFooter />
     </main>
