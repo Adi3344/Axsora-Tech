@@ -60,7 +60,9 @@ const clients: Client[] = [
   { name: 'Chanceladys Coffee', href: 'https://chanceladyscoffee.com/', logo: '/client-logos/chanceladys-coffee.png', logoBackground: 'white' },
 ];
 
-const featuredClients = clients;
+const featuredClients = clients.filter(
+  (client) => !['CS750', 'Verdikt Studios', 'Todle Legal', 'UC Homes'].includes(client.name),
+);
 
 const heroPhrases = [
   { before: '', accent: 'Websites that sell', after: '.' },
