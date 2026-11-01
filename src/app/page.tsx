@@ -12,6 +12,8 @@ import Link from 'next/link';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FeaturedSolutions from '@/components/FeaturedSolutions';
 import PortfolioShowcase from '@/components/PortfolioShowcase';
+import HowWeWork from '@/components/HowWeWork';
+import TechnologyStack from '@/components/TechnologyStack';
 import Testimonials from '@/components/Testimonials';
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
@@ -561,6 +563,10 @@ export default function Home() {
       <FeaturedSolutions />
 
       <PortfolioShowcase />
+
+      <HowWeWork />
+
+      <TechnologyStack />
 
       <Testimonials />
 

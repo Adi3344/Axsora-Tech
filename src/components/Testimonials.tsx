@@ -93,33 +93,40 @@ const testimonials = [
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const item = testimonials[active];
+  const pageSize = 3;
+  const pageCount = Math.ceil(testimonials.length / pageSize);
+  const visibleTestimonials = testimonials.slice(active * pageSize, (active + 1) * pageSize);
 
   return (
     <section className="testimonials-section section-shell" id="testimonials">
       <div className="testimonials-heading">
         <div className="section-kicker"><span>07</span> Client stories</div>
-        <h2>Good partnerships<br /><span>show in the work.</span></h2>
+        <h2>Trusted by ambitious<br /><span>businesses like yours.</span></h2>
         <p>Experiences shared by clients across website development, social media, AI automation, and growth marketing.</p>
       </div>
-      <div className="testimonial-card">
-        <Quote className="testimonial-quote-mark" size={56} aria-hidden="true" />
-        <span className="testimonial-service">{item.service}</span>
-        <p className="testimonial-quote">{item.quote}</p>
-        <div className="testimonial-meta">
-          <div className="testimonial-avatar testimonial-avatar--logo">
-            <Image src={item.logo} width={42} height={42} alt={`${item.client} logo`} />
-          </div>
-          <div>
-            <strong>{item.client}</strong>
-            <span>{item.role}</span>
-          </div>
-        </div>
-        <div className="testimonial-controls">
-          <span>{String(active + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}</span>
-          <button type="button" onClick={() => setActive((active - 1 + testimonials.length) % testimonials.length)} aria-label="Previous testimonial"><ArrowLeft size={16} /></button>
-          <button type="button" onClick={() => setActive((active + 1) % testimonials.length)} aria-label="Next testimonial"><ArrowRight size={16} /></button>
-        </div>
+      <div className="testimonial-grid" aria-live="polite">
+        {visibleTestimonials.map((item) => (
+          <article className="testimonial-card" key={item.client}>
+            <div className="testimonial-client">
+              <Image src={item.logo} width={120} height={44} alt={`${item.client} logo`} />
+              <span>{item.client}</span>
+            </div>
+            <div className="testimonial-card-quote-icon"><Quote size={22} aria-hidden="true" /></div>
+            <p className="testimonial-quote">{item.quote}</p>
+            <div className="testimonial-meta">
+              <div className="testimonial-avatar">{item.client.slice(0, 1)}</div>
+              <div>
+                <strong>{item.client}</strong>
+                <span>{item.role}</span>
+              </div>
+            </div>
+            </article>
+        ))}
+      </div>
+      <div className="testimonial-controls">
+        <span>{String(active + 1).padStart(2, '0')} / {String(pageCount).padStart(2, '0')}</span>
+        <button type="button" onClick={() => setActive((active - 1 + pageCount) % pageCount)} aria-label="Previous set of client reviews"><ArrowLeft size={16} /></button>
+        <button type="button" onClick={() => setActive((active + 1) % pageCount)} aria-label="Next set of client reviews"><ArrowRight size={16} /></button>
       </div>
     </section>
   );

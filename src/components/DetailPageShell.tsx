@@ -8,15 +8,21 @@ export default function DetailPageShell({
   title,
   intro,
   children,
+  heroVisual,
   actionHref = '/#contact',
   actionLabel = 'Get a quote',
+  showBottomCta = true,
+  homeHref = '/#home',
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro: string;
   children: React.ReactNode;
+  heroVisual?: React.ReactNode;
   actionHref?: string;
   actionLabel?: string;
+  showBottomCta?: boolean;
+  homeHref?: string;
 }) {
   return (
     <main className="detail-page">
@@ -31,19 +37,19 @@ export default function DetailPageShell({
       </header>
       <section className="detail-hero section-shell">
         <div className="detail-hero-copy">
-          <Link className="detail-back-link" href="/">← Back to home</Link>
+          <Link className="detail-back-link" href={homeHref}>← Back to home</Link>
           <p className="detail-eyebrow">{eyebrow}</p>
           <h1>{title}</h1>
           <p className="detail-intro">{intro}</p>
           <Link className="detail-primary-button" href={actionHref}>Start a conversation <ArrowUpRight size={16} /></Link>
         </div>
-        <div className="detail-hero-orbit" aria-hidden="true"><span>AX</span><i /><i /><i /></div>
+        {heroVisual ?? <div className="detail-hero-orbit" aria-hidden="true"><span>AX</span><i /><i /><i /></div>}
       </section>
       {children}
-      <section className="detail-cta section-shell">
-        <div><p className="detail-eyebrow">READY WHEN YOU ARE</p><h2>Let&apos;s make the next move count.</h2></div>
-        <Link className="detail-primary-button" href={actionHref}>Talk to our team <ArrowRight size={16} /></Link>
-      </section>
+      {showBottomCta && <section className="detail-cta section-shell">
+          <div><p className="detail-eyebrow">READY WHEN YOU ARE</p><h2>Let&apos;s make the next move count.</h2></div>
+          <Link className="detail-primary-button" href={actionHref}>Talk to our team <ArrowRight size={16} /></Link>
+        </section>}
       <SiteFooter />
     </main>
   );

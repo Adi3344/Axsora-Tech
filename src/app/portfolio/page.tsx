@@ -1,6 +1,15 @@
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 import DetailPageShell from '@/components/DetailPageShell';
 import { getProjectScreenshot, portfolioProjects } from '@/data/siteContent';
+
+const projectHighlights: Record<string, string[]> = {
+  'Web design & development': ['Purposeful page structure', 'Responsive visual experience', 'Clear customer next steps'],
+  'Growth marketing': ['Audience-focused messaging', 'Brand and campaign consistency', 'Discovery and engagement'],
+  'Social media & content': ['Content-led storytelling', 'A recognisable brand presence', 'Audience engagement'],
+  'AI & automation': ['Connected digital workflows', 'Clear information architecture', 'A smoother customer journey'],
+  'Mobile app development': ['Mobile-first experience', 'Intuitive product interface', 'Room to grow over time'],
+};
 
 export default function PortfolioPage() {
   return (
@@ -8,8 +17,37 @@ export default function PortfolioPage() {
       <section className="all-portfolio-grid section-shell">
         {portfolioProjects.map((project, index) => (
           <article className="all-portfolio-card" key={project.slug}>
-            <a className="all-portfolio-image" href={project.url} target="_blank" rel="noopener noreferrer"><img loading="lazy" decoding="async" src={getProjectScreenshot(project.url)} alt={`${project.name} website homepage preview`} /><span>AX / {String(index + 1).padStart(2, '0')}</span></a>
-            <div className="all-portfolio-copy"><p className="detail-eyebrow">{project.category}</p><h2>{project.name}</h2><p>{project.description}</p><a className="blog-read-link" href={project.url} target="_blank" rel="noopener noreferrer">View live website <ArrowUpRight size={15} /></a></div>
+            <div className="all-portfolio-copy">
+              <p className="detail-eyebrow">{project.category}</p>
+              <h2>{project.name}</h2>
+              <p className="all-portfolio-description">{project.description}</p>
+              <div className="all-portfolio-features">
+                <h3>Project focus</h3>
+                <ul>
+                  {(projectHighlights[project.service] ?? ['Brand-led experience', 'Responsive design', 'Clear customer journey']).map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="all-portfolio-tags" aria-label="Project capabilities">
+                <span>{project.service}</span>
+                <span>{project.category}</span>
+              </div>
+              <a className="blog-read-link" href={project.url} target="_blank" rel="noopener noreferrer">View live website <ArrowUpRight size={15} /></a>
+            </div>
+            <a className="all-portfolio-image" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}>
+              <span className="all-portfolio-browser-bar"><i /><i /><i /><small>{new URL(project.url).hostname}</small></span>
+              <Image
+                loading="lazy"
+                decoding="async"
+                src={getProjectScreenshot(project.url)}
+                alt={`${project.name} website homepage preview`}
+                fill
+                unoptimized
+                sizes="(max-width: 760px) 100vw, 55vw"
+              />
+              <span className="all-portfolio-index">AX / {String(index + 1).padStart(2, '0')}</span>
+            </a>
           </article>
         ))}
       </section>

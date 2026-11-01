@@ -9,6 +9,7 @@ export type ServiceDetail = {
   deliverables: { title: string; description: string }[];
   process: { title: string; description: string }[];
   workSlugs: string[];
+  industries: { name: string; description: string }[];
 };
 
 export const serviceDetails: ServiceDetail[] = [
@@ -32,6 +33,11 @@ export const serviceDetails: ServiceDetail[] = [
       { title: 'Create, publish, learn', description: 'Content goes live with ongoing community care and regular performance reviews.' },
     ],
     workSlugs: ['verdikt-studios', 'chanceladys-coffee', 'wiktoria-nutrition'],
+    industries: [
+      { name: 'Food & beverage', description: 'Build a recognisable voice and share the people, products, and moments behind your brand.' },
+      { name: 'Lifestyle & wellbeing', description: 'Create useful, audience-first content that earns attention without relying on hard sells.' },
+      { name: 'Creative businesses', description: 'Turn your ideas, services, and launches into a consistent story across social channels.' },
+    ],
   },
   {
     slug: 'growth-marketing',
@@ -53,6 +59,11 @@ export const serviceDetails: ServiceDetail[] = [
       { title: 'Learn and scale', description: 'We review the evidence, share what it means, and invest in what performs.' },
     ],
     workSlugs: ['amark-logistics', 'wiktoria-nutrition', 'a2z-finance-protection'],
+    industries: [
+      { name: 'Professional services', description: 'Clarify complex offers and help high-intent prospects find a confident next step.' },
+      { name: 'eCommerce & retail', description: 'Connect discovery, product stories, and conversion-focused campaigns.' },
+      { name: 'Travel & hospitality', description: 'Reach the right audiences with timely campaigns and a smoother path to enquire or book.' },
+    ],
   },
   {
     slug: 'web-design-development',
@@ -74,6 +85,11 @@ export const serviceDetails: ServiceDetail[] = [
       { title: 'Launch & support', description: 'We test across devices, launch carefully, and help you take the next steps.' },
     ],
     workSlugs: ['a2z-finance-protection', 'verdikt-studios', 'chanceladys-coffee', 'amark-logistics', 'capraxis'],
+    industries: [
+      { name: 'Finance & professional services', description: 'Make specialist expertise easier to understand and take the next step with.' },
+      { name: 'Food, retail & eCommerce', description: 'Create an inviting digital storefront for products, services, and customer stories.' },
+      { name: 'Logistics & operations', description: 'Explain capabilities clearly and help business customers reach the right team.' },
+    ],
   },
   {
     slug: 'ai-automations',
@@ -95,6 +111,11 @@ export const serviceDetails: ServiceDetail[] = [
       { title: 'Test and improve', description: 'We validate with your team, refine the flow, and measure its day-to-day value.' },
     ],
     workSlugs: ['cs750', 'truston-finance', 'ready2sell-homes'],
+    industries: [
+      { name: 'Finance & professional services', description: 'Reduce repetitive intake and handoffs while keeping people in control of important decisions.' },
+      { name: 'Property & real estate', description: 'Connect enquiry, follow-up, and scheduling tasks into more consistent workflows.' },
+      { name: 'Membership & hospitality', description: 'Coordinate requests and routine operations across the tools your team already uses.' },
+    ],
   },
   {
     slug: 'mobile-app-development',
@@ -116,6 +137,11 @@ export const serviceDetails: ServiceDetail[] = [
       { title: 'Launch & learn', description: 'We prepare for release, monitor real-world use, and plan improvements with you.' },
     ],
     workSlugs: ['capraxis', 'rcf-inc', 'chanceladys-coffee'],
+    industries: [
+      { name: 'Professional services', description: 'Give clients a clearer way to access expertise, updates, and useful self-service tools.' },
+      { name: 'Retail & commerce', description: 'Create convenient mobile journeys for discovering products and engaging with your brand.' },
+      { name: 'Community & wellbeing', description: 'Make it easier for people to find resources, connect, and keep up with your service.' },
+    ],
   },
 ];
 
