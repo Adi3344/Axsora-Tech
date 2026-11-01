@@ -9,6 +9,14 @@ export type PortfolioProject = {
   imageBackground?: string;
 };
 
+export const projectHighlights: Record<string, string[]> = {
+  'Web design & development': ['Purposeful page structure', 'Responsive visual experience', 'Clear customer next steps'],
+  'Growth marketing': ['Audience-focused messaging', 'Brand and campaign consistency', 'Discovery and engagement'],
+  'Social media & content': ['Content-led storytelling', 'A recognisable brand presence', 'Audience engagement'],
+  'AI & automation': ['Connected digital workflows', 'Clear information architecture', 'A smoother customer journey'],
+  'Mobile app development': ['Mobile-first experience', 'Intuitive product interface', 'Room to grow over time'],
+};
+
 export function getProjectScreenshot(url: string) {
   const localScreenshots: Record<string, string> = {
     'https://londonplantmaintenance.co.uk/': '/portfolio-screenshots/london-plant-maintenance.gif',

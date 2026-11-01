@@ -1,10 +1,10 @@
 'use client';
 
-import { ArrowUpRight, Code2 } from 'lucide-react';
+import { ArrowUpRight, Check, Code2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState, type KeyboardEvent } from 'react';
-import { getProjectScreenshot, portfolioProjects } from '@/data/siteContent';
+import { getProjectScreenshot, portfolioProjects, projectHighlights } from '@/data/siteContent';
 
 const featuredSlugs = [
   'a2z-finance-protection',
@@ -85,13 +85,25 @@ export default function PortfolioShowcase() {
           <div className="portfolio-feature-copy">
             <div className="portfolio-feature-kicker"><Code2 size={16} /> {project.category}</div>
             <h3>{project.name}</h3>
-            <p className="portfolio-feature-subtitle">{project.service}</p>
             <p className="portfolio-feature-description">{project.description}</p>
+            <div className="portfolio-feature-focus">
+              <h4>Project focus</h4>
+              <ul>
+                {(projectHighlights[project.service] ?? ['Brand-led experience', 'Responsive design', 'Clear customer journey']).map((highlight) => (
+                  <li key={highlight}><Check size={14} aria-hidden="true" />{highlight}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="portfolio-feature-tags" aria-label="Project capabilities">
+              <span>{project.service}</span>
+              <span>{project.category}</span>
+            </div>
             <a href={project.url} target="_blank" rel="noopener noreferrer" className="portfolio-feature-link">
               Visit live website <ArrowUpRight size={15} />
             </a>
           </div>
-          <div className="portfolio-feature-visual">
+          <div className="portfolio-feature-visual" aria-label={`${project.name} website preview`}>
+            <span className="portfolio-feature-browser-bar"><i /><i /><i /><small>{new URL(project.url).hostname}</small></span>
             <Image
               src={getProjectScreenshot(project.url)}
               alt={`${project.name} website preview`}
@@ -99,7 +111,7 @@ export default function PortfolioShowcase() {
               sizes="(max-width: 800px) 90vw, 55vw"
               unoptimized
             />
-            <span className="portfolio-visual-label">PROJECT PREVIEW</span>
+            <span className="portfolio-visual-label">AX / {String(featuredSlugs.indexOf(project.slug) + 1).padStart(2, '0')}</span>
           </div>
         </article>
         <div className="portfolio-redesign-footer">

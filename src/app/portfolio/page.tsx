@@ -1,15 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import DetailPageShell from '@/components/DetailPageShell';
-import { getProjectScreenshot, portfolioProjects } from '@/data/siteContent';
-
-const projectHighlights: Record<string, string[]> = {
-  'Web design & development': ['Purposeful page structure', 'Responsive visual experience', 'Clear customer next steps'],
-  'Growth marketing': ['Audience-focused messaging', 'Brand and campaign consistency', 'Discovery and engagement'],
-  'Social media & content': ['Content-led storytelling', 'A recognisable brand presence', 'Audience engagement'],
-  'AI & automation': ['Connected digital workflows', 'Clear information architecture', 'A smoother customer journey'],
-  'Mobile app development': ['Mobile-first experience', 'Intuitive product interface', 'Room to grow over time'],
-};
+import { getProjectScreenshot, portfolioProjects, projectHighlights } from '@/data/siteContent';
 
 export default function PortfolioPage() {
   return (
